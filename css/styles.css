@@ -20,13 +20,18 @@
   margin-bottom: 25.6rem;
 }
 
+.hero-container-left{
+  width: 55vw;
+}
+
 .hero-logo-text {
-  width: 375px;
+  width: 35vw;
   height: auto;
   margin-bottom: 4.7rem;
 }
 
 .hero-logo-subheading {
+  width: 100%;
   font-size: 3rem;
   color: #222222;
   line-height: 1.15;
@@ -36,13 +41,12 @@
 }
 
 .hero-cans-container {
-  position: relative;
-  margin-bottom: 9.6rem;
-}
-.img-container {
   position: absolute;
-  top: -580px;
-  left: -450px;
+ right: 10%;
+}
+
+.hero-cans-image{
+  width: 35vw;
 }
 
 .hero-cans {
@@ -95,7 +99,7 @@
 }
 
 .section-about--portrait {
-  width: 400px;
+  width: 30vw;
   height: auto;
   margin-left: 5.6rem;
 }
