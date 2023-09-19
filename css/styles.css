@@ -44,7 +44,7 @@
 .hero-cans-container {
   position: absolute;
   right: 20%;
-  top: 17vh;
+  top: 12vh;
   z-index: 9999;
 }
 
@@ -56,6 +56,7 @@
 .hero-cans {
   width: 83vw;
 }
+
 /* SPOTS HERO CAN */
 
 .spot-one--hero_can {
@@ -138,8 +139,24 @@
   align-items: center;
   gap: 17.4rem;
 }
+.section-about--portrait {
+  width: 25vw;
+  height: auto;
+  margin-left: 5.6rem;
+  z-index: 99999;
+}
 
-.section-about--content {
+.section-about--spot {
+  position: absolute;
+  width: 35vw;
+  height: 35vh;
+  background-color: #00f1d4;
+  filter: blur(80.96385192871094px);  
+  z-index: -1;
+}
+
+.section-about--description {
+  min-width: 500px;
   margin-bottom: 6.4rem;
 }
 
@@ -154,22 +171,18 @@
   line-height: 1.5;
 }
 
-.section-about--portrait {
-  width: 25vw;
-  height: auto;
-  margin-left: 5.6rem;
-}
-
 /* SECTION-FEATURES */
 
 .section-features {
 }
 
 .accordion-container {
+  position: relative;
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   border-radius: 66px;
   padding: 4.8rem 6.4rem;
   margin-bottom: 17.6rem;
+  z-index: 999999;
 }
 
 .accordion-item {
@@ -180,6 +193,7 @@
   min-height: 75px;
   padding-top: 2.4rem;
   overflow: hidden;
+  z-index: 999999;
 }
 .accordion-item:last-child {
   border-bottom: none;
@@ -440,16 +454,18 @@
 
 .footer-image--container {
   position: absolute;
-  overflow: hidden;
-  height: 5%;
+  /* overflow: hidden; */
+  /* width: 100%; */
+  height: 150px;
   z-index: 999999;
   bottom: 0;
-  margin-top: -8%;
-  margin-left: 35rem;
+  /* margin-top: -8%; */
+  /* margin-left: 35rem; */
 }
 
 .footer-image {
-  width: 15vw;
+
+  
 }
 
 .footer-info {
