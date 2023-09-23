@@ -29,6 +29,10 @@ html {
   font-display: swap;
 }
 
+:root{
+  --main-font-color:#060606;
+}
+
 body {
   position: relative;
   font-family: 'GT Walsheim Pro', sans-serif;

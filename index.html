@@ -32,94 +32,89 @@
     <main>
       <div class="wrapper">
         <section class="section-hero" id="section--1">
-          <div class="hero-container">
-            <div class="hero-container-left">
-              <img
-                class="hero-logo-text"
-                alt="logo text"
-                src="assets/images/archie_drinks_logo.svg"
-              />
+          <div class="section-hero--content">
+            <img
+              class="section-hero--logo-text"
+              alt="logo text"
+              src="assets/images/archie_drinks_logo.svg"
+            />
 
-              <p class="hero-logo-subheading">
-                Разработка функциональных напитков <br />
-                разнонаправленного действия
-              </p>
+            <p class="section-hero--subheading">
+              Разработка функциональных напитков <br />
+              разнонаправленного действия
+            </p>
 
-              <ul class="hero-features-list">
-                <li>
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="hero-features-list--icon"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 6v12m6-6H6"
-                      />
-                    </svg>
-                  </span>
-                  <span>Уникальные рецептуры</span>
-                </li>
-                <li>
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="hero-features-list--icon"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 6v12m6-6H6"
-                      />
-                    </svg>
-                  </span>
-                  <span>Грамотный подбор нутриентов</span>
-                </li>
-                <li>
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="hero-features-list--icon"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 6v12m6-6H6"
-                      />
-                    </svg>
-                  </span>
-                  <span>СТМ под ключ</span>
-                </li>
-              </ul>
-              <a class="hero-order-btn nav_link" href="#section--5"
-                >Заказать рецептуру</a
-              >
-            </div>
-            <div class="hero-cans-container">
-              <div class="spot-one--hero_can"></div>
-              <div class="spot-two--hero_can"></div>
-              <div class="spot-three--hero_can"></div>
-              <div class="spot-four--hero_can"></div>
+            <ul class="section-hero--features-list">
+              <li class="sectio-hero--list-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="section-hero--features-list--icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v12m6-6H6"
+                  />
+                </svg>
 
-              <img
-                class="hero-cans-image"
-                src="assets/images/cans_straight.svg"
-                alt="two cans with baverage"
-              />
-            </div>
+                <span>Уникальные рецептуры</span>
+              </li>
+              <li class="sectio-hero--list-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="section-hero--features-list--icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v12m6-6H6"
+                  />
+                </svg>
+
+                <span>Грамотный подбор нутриентов</span>
+              </li>
+              <li class="sectio-hero--list-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="section-hero--features-list--icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v12m6-6H6"
+                  />
+                </svg>
+
+                <span>СТМ под ключ</span>
+              </li>
+            </ul>
+            <a class="section-hero--order-btn nav_link" href="#section--5"
+              >Заказать рецептуру</a
+            >
+          </div>
+          <div class="section-hero--cans-container">
+            <div class="spot-one--hero_can"></div>
+            <div class="spot-two--hero_can"></div>
+            <div class="spot-three--hero_can"></div>
+            <div class="spot-four--hero_can"></div>
+
+            <img
+              class="section-hero--cans-image"
+              src="assets/images/cans_straight.svg"
+              alt="two cans with baverage"
+            />
           </div>
         </section>
         <section class="section-about" id="section--2">
@@ -143,7 +138,6 @@
             </p>
           </div>
         </section>
-        <!-- <div class="section-about--spot">WHY DON'T YOU WORK?????</div> -->
         <section class="section-features">
           <div class="accordion-container">
             <div class="accordion-item">
@@ -866,6 +860,12 @@
                     class="btn-submit--text"
                     src="assets/images/order_btn-text.svg"
                   />
+
+                  <!-- <span class="btn-submit--content-leftTop">Заказать</span>
+                  <span class="btn-submit--content-rightTop">рецептуру</span>
+                  <span class="btn-submit--content-leftBottom">Заказать</span>
+                  <span class="btn-submit--content-rightBottom">рецептуру</span> -->
+                  
                 </div>
               </div>
             </button>
@@ -875,15 +875,16 @@
     </main>
     <div class="space-container"></div>
 
+    <div class="footer-image--container">
+      <img
+        class="footer-image"
+        src="assets/images/cans_footer-straight.svg"
+        alt="two cans with baverage"
+      />
+    </div>
+    <div class="footer-spot--purple"></div>
+    <div class="footer-spot--green"></div>
     <footer class="section-footer">
-      <div class="footer-image--container">
-        <img
-          class="footer-image"
-          src="assets/images/cans_footer-straight.svg"
-          alt="two cans with baverage"
-        />
-      </div>
-
       <div class="footer-info">
         <img
           class="footer-logo"
