@@ -54,10 +54,11 @@ document.addEventListener('click', (e) => {
 });
 
 function onHandleClick(handle) {
-  const slider = handle.closest('.slider-container').querySelector('.slider');
+  const slider = document.querySelector('.slider');
   let sliderIndex = +slider.style.getPropertyValue('--slider-index');
   const leftHandle = document.querySelector('.left-handle');
   const cards = slider.querySelectorAll('.carousel-card').length + 1;
+  console.log(cards);
   let cardsPerPage = 7;
 
   function leftHandleRemove() {
@@ -69,16 +70,22 @@ function onHandleClick(handle) {
     }
   }
 
-  if (handle.classList.contains('left-handle')) {
-    console.log(sliderIndex);
-    if (sliderIndex <= Math.trunc(cards / cardsPerPage) && sliderIndex > 0) {
-      slider.style.setProperty('--slider-index', sliderIndex - 1);
-      leftHandleRemove();
-    }
-  }
+  // if (handle.classList.contains('left-handle')) {
+  //   console.log(sliderIndex);
+  //   if (sliderIndex <= Math.trunc(cards / cardsPerPage) && sliderIndex > 0) {
+  //     slider.style.setProperty('--slider-index', sliderIndex - 1);
+  //     leftHandleRemove();
+  //   }
+  // }
 
+  // if (handle.classList.contains('left-handle')) {
+  //   if(sliderIndex)
+  // }
+
+
+  
   if (handle.classList.contains('right-handle')) {
-    console.log(leftHandle);
+    console.log(handle);
     if (
       sliderIndex > Math.trunc(cards / cardsPerPage) ||
       sliderIndex === Math.trunc(cards / cardsPerPage)
@@ -88,7 +95,7 @@ function onHandleClick(handle) {
     } else {
       slider.style.setProperty('--slider-index', sliderIndex + 1);
       console.log(sliderIndex);
-      leftHandleRemove();
+      // leftHandleRemove();
     }
   }
 }
