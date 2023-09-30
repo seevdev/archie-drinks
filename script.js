@@ -61,41 +61,62 @@ function onHandleClick(handle) {
   console.log(cards);
   let cardsPerPage = 7;
 
-  function leftHandleRemove() {
+  // Pages = cards / cardsPerPage
+
+  if (handle.classList.contains('left-handle')) {
     if (sliderIndex > 0 && sliderIndex <= Math.trunc(cards / cardsPerPage)) {
-      leftHandle.classList.remove('hidden');
+      slider.style.setProperty('--slider-index', --sliderIndex); //looks funny
     }
     if (sliderIndex === 0) {
       leftHandle.classList.add('hidden');
     }
   }
 
-  // if (handle.classList.contains('left-handle')) {
-  //   console.log(sliderIndex);
-  //   if (sliderIndex <= Math.trunc(cards / cardsPerPage) && sliderIndex > 0) {
-  //     slider.style.setProperty('--slider-index', sliderIndex - 1);
-  //     leftHandleRemove();
-  //   }
-  // }
-
-  // if (handle.classList.contains('left-handle')) {
-  //   if(sliderIndex)
-  // }
-
-
-  
   if (handle.classList.contains('right-handle')) {
-    console.log(handle);
     if (
       sliderIndex > Math.trunc(cards / cardsPerPage) ||
       sliderIndex === Math.trunc(cards / cardsPerPage)
     ) {
       slider.style.setProperty('--slider-index', 0);
-      leftHandleRemove();
+      leftHandle.classList.add('hidden');
     } else {
       slider.style.setProperty('--slider-index', sliderIndex + 1);
-      console.log(sliderIndex);
-      // leftHandleRemove();
+      leftHandle.classList.remove('hidden');
     }
   }
 }
+
+function errorMessage(error, node) {
+  const form = document.querySelector('.section-contact');   
+  const errorMessage = document.createElement('span');
+  console.log(errorMessage);
+  errorMessage.innerHTML = error;
+  errorMessage.classList.add('error');
+  node.after(errorMessage);
+}
+
+// CONTACT FORM VALIDATION
+const orderBtn = document.querySelector('.btn-submit');
+function orderBtnHandler() {
+  let error;
+  // FirstName Validation
+  const firstName = document.querySelector('[name="firstName"]');
+  console.log(firstName);
+
+  if (
+    firstName.innerHTML.length + 1 < 2 ||
+    firstName.innerHTML.length + 1 > 15
+  ) {
+    error = 'Invalid name. Name needs to be at least 2 chars long';
+    errorMessage(error, firstName);
+  }
+
+  //LastName Validation
+
+  //Email Validation
+  //Phone Validation
+}
+orderBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  orderBtnHandler();
+});

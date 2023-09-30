@@ -219,7 +219,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   border-bottom: 1px solid #d1d1d1;
   min-height: 75px;
   padding-top: 2.4rem;
@@ -404,9 +403,9 @@
   top: 0;
 }
 
-.left-handle:hover::after {
+/* .left-handle:hover::after {
   content: \2039;
-}
+} */
 
 .right-handle {
   position: absolute;
@@ -439,6 +438,7 @@
   width: 100%;
 }
 .input {
+  position: relative;
   width: 100%;
   margin-bottom: 1.2rem;
   background-color: transparent;
@@ -610,4 +610,10 @@
   background: none;
   border: none;
   z-index: 99999;
+}
+
+.error{
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
