@@ -87,7 +87,10 @@ function onHandleClick(handle) {
 }
 
 function errorMessage(error, node) {
-  const form = document.querySelector('.section-contact');   
+  // document.querySelector(`${node.closest('div')}`);
+  console.log(node.closest('div span'));
+
+  const form = document.querySelector('.section-contact');
   const errorMessage = document.createElement('span');
   console.log(errorMessage);
   errorMessage.innerHTML = error;
@@ -97,24 +100,36 @@ function errorMessage(error, node) {
 
 // CONTACT FORM VALIDATION
 const orderBtn = document.querySelector('.btn-submit');
+
 function orderBtnHandler() {
-  let error;
+  let error = '';
   // FirstName Validation
   const firstName = document.querySelector('[name="firstName"]');
-  console.log(firstName);
+  console.log(firstName.value);
 
-  if (
-    firstName.innerHTML.length + 1 < 2 ||
-    firstName.innerHTML.length + 1 > 15
-  ) {
+  if (firstName.value.length + 1 < 2 || firstName.value.length + 1 > 15) {
     error = 'Invalid name. Name needs to be at least 2 chars long';
     errorMessage(error, firstName);
   }
 
   //LastName Validation
+  const lastName = document.querySelector('[name="lastName"]');
 
+  if (lastName.value.length + 1 < 2 || lastName.value.length + 1 > 15) {
+    error = 'Invalid last name. Name needs to be at least 2 chars long';
+    errorMessage(error, lastName);
+  }
   //Email Validation
+  const email = document.querySelector('[email="email"]');
+
+  if (!email.value.matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+    error = 'Invalid email.';
+    errorMessage(error, email);
+  }
+
+
   //Phone Validation
+  const phone = document.querySelector('[phone]="phone"');
 }
 orderBtn.addEventListener('click', (e) => {
   e.preventDefault();

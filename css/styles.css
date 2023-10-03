@@ -4,21 +4,21 @@
   margin: 0 auto;
 }
 
-.nav {
+.nav-links {
   width: 115rem;
   margin: 0 auto;
   display: flex;
   list-style-type: none;
   gap: 5.4rem;
   margin-top: 2.4rem;
-  margin-bottom: 9.2rem;
-  font-size: 2rem;
+  margin-bottom: 5.6rem;
+  font-size: 1.8rem;
 }
 
 .section-hero {
   display: flex;
   gap: 14.4rem;
-  margin-bottom: 9.6rem;
+  margin-bottom: 8.8rem;
 }
 
 .section-hero--content {
@@ -27,7 +27,8 @@
 }
 
 .section-hero--logo-text {
-  width: 18.5vw;
+  /* width: 18.5vw; */
+  width: 55%;
   height: auto;
   margin-bottom: 4.7rem;
 }
@@ -159,6 +160,7 @@
   position: relative;
   display: flex;
   align-items: end;
+  justify-content: flex-start;
   width: 100%;
   z-index: -3;
 }
@@ -177,8 +179,10 @@
 }
 
 .section-about--portrait {
-  margin-left: 5.6rem;
-  height: 40vh;
+  /* margin-left: 5.6rem; */
+  /* max-height: 40vh; */
+  height: auto;
+  width: 25vw;
 }
 
 .section-about--description {
@@ -202,6 +206,7 @@
 .section-features {
   position: relative;
   margin-top: -1%;
+  width: 100%;
   z-index: 1;
 }
 
@@ -213,6 +218,7 @@
   margin-bottom: 17.6rem;
   background-color: #fff;
   z-index: 3;
+  width: 100%;
 }
 
 .accordion-item {
@@ -224,6 +230,7 @@
   padding-top: 2.4rem;
   overflow: hidden;
   z-index: 999999;
+  width: 100%;
 }
 .accordion-item:last-child {
   border-bottom: none;
@@ -288,11 +295,6 @@
   width: 100px;
 }
 
-.production-stages--content {
-  width: 600px;
-  line-height: 1.5;
-}
-
 .production-stages--heading {
   font-size: 1.8rem;
   font-weight: 600;
@@ -300,6 +302,11 @@
   letter-spacing: 0.5px;
   width: 250px;
 }
+.production-stages--content {
+  width: 600px;
+  line-height: 1.5;
+}
+
 
 /* SECTION-PRODUCTS */
 
@@ -442,7 +449,17 @@
   width: 100%;
   margin-bottom: 1.2rem;
   background-color: transparent;
+  padding: 0.8rem;
+  border: none;
+  border-bottom: 1px solid #000;
+  flex: 1;
+  flex-shrink: 0;
 }
+.input-box {
+  position: relative;
+  flex: 1;
+}
+
 .inputs-container {
   margin-bottom: 7.2rem;
 }
@@ -515,11 +532,7 @@
   letter-spacing: 1px;
   margin-bottom: 4.8rem;
 }
-.input {
-  padding: 0.8rem;
-  border: none;
-  border-bottom: 1px solid #000;
-}
+
 
 /* SECTION-FOOTER  */
 
@@ -612,8 +625,10 @@
   z-index: 99999;
 }
 
-.error{
+.error {
   position: absolute;
-  bottom: 0;
+  bottom: -12px;
   left: 0;
+  font-size: 1rem;
+  color: red;
 }

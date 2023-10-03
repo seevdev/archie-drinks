@@ -1,2 +1,114 @@
-@media (width <= 600px) {
+@media (width <= 1366px) {
+  .section-hero--cans-image {
+    width: 25vw;
+  }
+  .section-hero--logo-text{
+    /* width: 25vw;
+    width: 20vw; */
+  }
+  .nav-links{
+    margin-bottom: 5.6rem;
+  }
+}
+
+@media (width <=1260px) {
+ 
+  .wrapper {
+    padding: 0 4.8rem ;
+    width: 95vw;
+  }
+  nav {
+    /* margin-bottom: 5.6rem; */
+    padding: 2.4rem 4.8rem;
+
+  }
+
+  .section-hero--logo-text {
+    /* width: 25vw; */
+    width: 60%;
+  }
+
+  .section-about--portrait {
+    width: 25vw;
+    height: auto;
+  }
+
+  .section-about--heading {
+    font-size: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+  .section-about--text {
+    line-height: 1.15;
+    font-size: 1.4rem;
+    text-wrap: wrap;
+  }
+
+  .section-about--description {
+    min-width: 100px;
+    margin-bottom: 4.8rem;
+  }
+
+  .accordion-item--header {
+    font-size: 1.6rem;
+    width: 100%;
+  }
+
+  .description {
+    font-size: 1.4rem;
+    margin-right: 1.2rem;
+  }
+  .stages-heading {
+    font-size: 3.2rem;
+  }
+
+  .production-stages {
+    display: flex;
+    flex-shrink: 2;
+    align-items: center;
+    gap: 7.2rem;
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 3.2rem;
+    padding-top: 1.2rem;
+  }
+
+  .production-stages--number {
+    font-family: 'GT Walsheim Pro Thin', sans-serif;
+    font-size: 5.6rem;
+    width: 100px;
+  }
+  .stages-container {
+    width: 100%;
+  }
+  .production-stages--heading {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    min-width: 250px;
+  }
+  .production-stages--content {
+    width: 600px;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    text-wrap: wrap;
+  }
+}
+
+@media (width<=1050px) {
+  .section-hero--subheading {
+    font-size: 2rem;
+  }
+
+  .section-about--heading {
+    font-size: 2.4rem;
+  }
+
+  .section-about--text {
+    font-size: 1.2rem;
+  }
+  .section-about--portrait {
+    /* height: 25vh; */
+    width: 30vw;
+    height: auto;
+  }
 }
