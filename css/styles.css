@@ -18,7 +18,7 @@
 .section-hero {
   display: flex;
   gap: 14.4rem;
-  margin-bottom: 8.8rem;
+  margin-bottom: 10.7rem;
 }
 
 .section-hero--content {
@@ -51,7 +51,7 @@
 }
 
 .section-hero--cans-image {
-  width: 18.5vw;
+  width: 100%;
   z-index: 9999;
 }
 
@@ -179,14 +179,14 @@
 }
 
 .section-about--portrait {
-  /* margin-left: 5.6rem; */
-  /* max-height: 40vh; */
+ margin-left: 5.6rem;
   height: auto;
-  width: 25vw;
+  width: 90%
 }
 
 .section-about--description {
-  min-width: 500px;
+  width: 95%;
+  /* min-width: 500px; */
   margin-bottom: 6.4rem;
 }
 
@@ -539,8 +539,6 @@
 .section-footer {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
   background: #212121;
   z-index: -1;
   min-height: 25vh;
@@ -555,6 +553,7 @@
   z-index: 999999;
   bottom: 0;
   left: 22%;
+  margin-right: 5.6rem;
 }
 
 .footer-spot--green {
@@ -582,6 +581,8 @@
 }
 
 .footer-info {
+  position:absolute;
+  right: 20%;
   display: flex;
   flex-direction: column;
   color: #d1d1d1;
@@ -596,6 +597,7 @@
 }
 
 .footer-logo {
+ 
   width: 100px;
   height: auto;
 }
