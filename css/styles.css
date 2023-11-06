@@ -179,9 +179,9 @@
 }
 
 .section-about--portrait {
- margin-left: 5.6rem;
+  margin-left: 5.6rem;
   height: auto;
-  width: 90%
+  width: 90%;
 }
 
 .section-about--description {
@@ -307,7 +307,6 @@
   line-height: 1.5;
 }
 
-
 /* SECTION-PRODUCTS */
 
 .section-products {
@@ -431,6 +430,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 25.6rem;
+  flex: 1;
 }
 .contact-form--info {
   width: 55%;
@@ -446,18 +446,18 @@
 }
 .input {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   margin-bottom: 1.2rem;
   background-color: transparent;
   padding: 0.8rem;
   border: none;
   border-bottom: 1px solid #000;
-  flex: 1;
   flex-shrink: 0;
+  flex-grow: 1;
 }
 .input-box {
   position: relative;
-  flex: 1;
+  /* width: 100%; */
 }
 
 .inputs-container {
@@ -533,12 +533,12 @@
   margin-bottom: 4.8rem;
 }
 
-
 /* SECTION-FOOTER  */
 
 .section-footer {
   position: relative;
   width: 100%;
+  height: min-content;
   background: #212121;
   z-index: -1;
   min-height: 25vh;
@@ -581,12 +581,12 @@
 }
 
 .footer-info {
-  position:absolute;
+  position: absolute;
   right: 20%;
   display: flex;
   flex-direction: column;
   color: #d1d1d1;
-  gap: 3.2rem;
+  gap: 1.8rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
@@ -597,9 +597,13 @@
 }
 
 .footer-logo {
- 
-  width: 100px;
-  height: auto;
+  width: 65%;
+}
+.footer-description {
+  font-size: 0.6rem;
+}
+.preserved{
+  font-size: 0.8rem;
 }
 
 /* HELPERS */

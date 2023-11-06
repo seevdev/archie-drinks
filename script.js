@@ -1,6 +1,6 @@
 // SITE NAVIGATION
 
-document.querySelector('.nav').addEventListener('click', function (e) {
+document.querySelector('.nav-links').addEventListener('click', function (e) {
   e.preventDefault();
   if (e.target.classList.contains('nav_link')) {
     const id = e.target.getAttribute('href');
