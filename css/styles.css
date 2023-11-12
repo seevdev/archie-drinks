@@ -348,7 +348,7 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  width: 255px;
+  width: 255px; 
   height: 320px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.053);
   border-radius: 35px;
@@ -400,6 +400,8 @@
   width: 72px;
   height: 72px;
   stroke: #adb5bd;
+  width: 64px;
+  height: 64px;
 }
 .handle-icon:hover {
   stroke: #495057;
@@ -604,8 +606,13 @@
 .footer-description {
   font-size: 1.2rem;
 }
+<<<<<<< HEAD
 .preserved{
   font-size: 1.2rem;
+=======
+.preserved {
+  font-size: 0.8rem;
+>>>>>>> 9de4154ec7a9535b8bb6c918914c7237533dd309
 }
 
 /* HELPERS */
