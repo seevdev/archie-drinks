@@ -348,7 +348,7 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  width: 255px;
+  /* width: 255px; */
   height: 320px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.053);
   border-radius: 35px;
@@ -398,6 +398,8 @@
 
 .handle-icon {
   stroke: #adb5bd;
+  width: 64px;
+  height: 64px;
 }
 .handle-icon:hover {
   stroke: #495057;
@@ -602,7 +604,7 @@
 .footer-description {
   font-size: 0.6rem;
 }
-.preserved{
+.preserved {
   font-size: 0.8rem;
 }
 

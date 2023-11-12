@@ -29,7 +29,6 @@
     padding: 0 4.8rem;
   }
   .wrapper {
-    /* padding: 0 4.8rem; */
     width: 95vw;
   }
   nav {
@@ -139,5 +138,17 @@
   }
   .footer-image{
     width: 45%;
+  }
+
+  .carousel-card--image{
+  width: 35%;
+
+
+  }
+  .carousel-card{
+  flex: 0 0 155px;
+  height: 220px;
+
+
   }
 }
