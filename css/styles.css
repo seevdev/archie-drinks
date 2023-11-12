@@ -397,6 +397,8 @@
 }
 
 .handle-icon {
+  width: 72px;
+  height: 72px;
   stroke: #adb5bd;
 }
 .handle-icon:hover {
@@ -538,7 +540,7 @@
 .section-footer {
   position: relative;
   width: 100%;
-  height: min-content;
+  height: 35vh;
   background: #212121;
   z-index: -1;
   min-height: 25vh;
@@ -597,13 +599,13 @@
 }
 
 .footer-logo {
-  width: 65%;
+  width: 75%;
 }
 .footer-description {
-  font-size: 0.6rem;
+  font-size: 1.2rem;
 }
 .preserved{
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 /* HELPERS */

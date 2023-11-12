@@ -108,15 +108,35 @@
     font-size: 1.4rem;
     text-wrap: wrap;
   }
+  .section-footer{
+    height: 25vh;
+  }
+  
+  .handle-icon{
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer-logo {
+    width: 55%;
+  }
   .footer-image{
     width: 50%;
   }
-  .footer-logo{
-    width: 30% ;
+
+  .btn-submit--background{
+
+    width: 200px;
+  }
+  .btn-submit--text{
+    width: 150px;
   }
 }
 
 @media (width<=1050px) {
+  .stages-heading{
+    font-size:2.8rem ;
+  }
   .section-hero--subheading {
     font-size: 2rem;
   }
@@ -134,10 +154,22 @@
     height: auto;
   }
   
+  .section-footer{
+    height: 15vh;
+  }
+  .footer-logo {
+    width: 50%;
+  }
   .footer-info{
     gap: 1.8rem;
   }
   .footer-image{
     width: 45%;
+  }
+  .footer-description {
+    font-size: 1rem;
+  }
+  .preserved{
+    font-size: 1rem;
   }
 }

@@ -41,6 +41,10 @@ body {
   color: #060606;
   overflow-x: hidden;
 }
+
+.heading{
+  font-size: 3.8rem;
+}
 a:link,
 a:visited {
   text-decoration: none;
