@@ -137,11 +137,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   window.addEventListener('resize', () => {
-    const carouselInfo = document.querySelector('.carousel-card--content');
+    const carouselContent = document.querySelectorAll(
+      '.carousel-card--content'
+    );
 
     if (window.innerWidth <= 1050) {
-      console.log(carouselInfo);
-      carouselInfo.style.display = 'none';
+      console.log(carouselContent);
+      [...carouselContent].map((info) => {
+        info.classList.add('hidden');
+      });
+    } else {
+      [...carouselContent].map((info) => {
+        info.classList.remove('hidden');
+      });
     }
   });
 });
