@@ -348,7 +348,7 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  width: 255px; 
+  width: 255px;
   height: 320px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.053);
   border-radius: 35px;
@@ -362,6 +362,7 @@
   padding: 3rem;
   bottom: 0;
   height: 35%;
+  width: 100%;
 }
 
 .carousel-card--image {
@@ -606,7 +607,7 @@
 .footer-description {
   font-size: 1.2rem;
 }
-.preserved{
+.preserved {
   font-size: 1.2rem;
 }
 

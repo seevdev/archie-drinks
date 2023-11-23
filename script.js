@@ -1,6 +1,14 @@
 // SITE NAVIGATION
 
 document.addEventListener('DOMContentLoaded', function () {
+  //SELECTIONS
+
+  const carouselContent = document.querySelectorAll('.carousel-card--content');
+
+  // (() => {
+  //   carouselContentToggle(carouselContent);
+  // })();
+
   document.querySelector('.nav-links').addEventListener('click', function (e) {
     e.preventDefault();
     if (e.target.classList.contains('nav_link')) {
@@ -136,20 +144,19 @@ document.addEventListener('DOMContentLoaded', function () {
     orderBtnHandler();
   });
 
-  window.addEventListener('resize', () => {
-    const carouselContent = document.querySelectorAll(
-      '.carousel-card--content'
-    );
-
+  function carouselContentToggle(content) {
+    // add type in TS
     if (window.innerWidth <= 1050) {
-      console.log(carouselContent);
-      [...carouselContent].map((info) => {
+      [...content].map((info) => {
         info.classList.add('hidden');
       });
     } else {
-      [...carouselContent].map((info) => {
+      [...content].map((info) => {
         info.classList.remove('hidden');
       });
     }
+  }
+  window.addEventListener('resize', () => {
+    carouselContentToggle(carouselContent);
   });
 });

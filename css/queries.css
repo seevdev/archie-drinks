@@ -107,11 +107,11 @@
     text-wrap: wrap;
   }
 
-  .section-footer{
+  .section-footer {
     height: 25vh;
   }
-  
-  .handle-icon{
+
+  .handle-icon {
     width: 48px;
     height: 48px;
   }
@@ -119,15 +119,14 @@
   .footer-logo {
     width: 55%;
   }
-  .footer-image{
+  .footer-image {
     width: 50%;
   }
 
-  .btn-submit--background{
-
+  .btn-submit--background {
     width: 200px;
   }
-  .btn-submit--text{
+  .btn-submit--text {
     width: 150px;
   }
   .footer-image {
@@ -139,33 +138,53 @@
 }
 
 @media (width<=1050px) {
-  .stages-heading{
-    font-size:2.8rem ;
+  .nav_link{
+    font-size: 1.6rem;
+  }
+  .section-hero--features-list {
+    font-size: 1.4rem;
+  }
+  .stages-heading {
+    font-size: 2.8rem;
   }
   .section-hero--subheading {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .section-about--heading {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 
   .section-about--text {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .section-about--portrait {
     /* height: 25vh; */
     width: 30vw;
     height: auto;
   }
-  
-  .section-footer{
+
+  .accordion-item--header {
+    font-size: 1.4rem;
+  }
+  .accordion-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .stages-heading {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .section-footer {
     height: 15vh;
   }
   .footer-logo {
     width: 50%;
   }
-  .footer-info{
+  .footer-info {
     gap: 1.8rem;
   }
   .footer-image {
@@ -174,7 +193,19 @@
   .footer-description {
     font-size: 1rem;
   }
-  .preserved{
+  .preserved {
     font-size: 1rem;
+  }
+  .carousel-card--info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-card--heading {
+    font-size: 1.8rem;
+    letter-spacing: 1.25%;
+  }
+  .carousel-card--content {
+    display: none;
   }
 }
