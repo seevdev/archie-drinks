@@ -90,6 +90,7 @@
     font-size: 5.6rem;
     width: 100px;
   }
+
   .stages-container {
     width: 100%;
   }
@@ -138,15 +139,18 @@
 }
 
 @media (width<=1050px) {
-  .nav_link{
+  .nav_link {
     font-size: 1.6rem;
   }
+
   .section-hero--features-list {
     font-size: 1.4rem;
   }
+
   .stages-heading {
     font-size: 2.8rem;
   }
+
   .section-hero--subheading {
     font-size: 1.6rem;
   }
@@ -158,6 +162,7 @@
   .section-about--text {
     font-size: 1rem;
   }
+
   .section-about--portrait {
     /* height: 25vh; */
     width: 30vw;
@@ -167,13 +172,30 @@
   .accordion-item--header {
     font-size: 1.4rem;
   }
+
   .accordion-icon {
     width: 18px;
     height: 18px;
   }
+
   .stages-heading {
     font-size: 2rem;
   }
+
+  .production-stages {
+    gap: 4.8rem;
+  }
+  .production-stages--content {
+    font-size: 1rem;
+  }
+
+  .production-stages--heading {
+    font-size: 1.4rem;
+  }
+  .production-stages--number {
+    font-size: 4.8rem;
+  }
+
   .description {
     font-size: 1.2rem;
   }
@@ -181,31 +203,177 @@
   .section-footer {
     height: 15vh;
   }
+
   .footer-logo {
     width: 50%;
   }
+
   .footer-info {
     gap: 1.8rem;
   }
+
   .footer-image {
     width: 45%;
   }
+
   .footer-description {
     font-size: 1rem;
   }
+
   .preserved {
     font-size: 1rem;
+  }
+
+  .carousel-card {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 220px;
   }
   .carousel-card--info {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .carousel-card--heading {
     font-size: 1.8rem;
     letter-spacing: 1.25%;
   }
+
   .carousel-card--content {
     display: none;
+  }
+  .carousel-card--image {
+    width: 32%;
+  }
+  .carousel-card--heading {
+    font-size: 1.2rem;
+  }
+  .products-heading {
+    font-size: 2rem;
+  }
+  .section-contact--heading {
+    font-size: 2rem;
+  }
+}
+
+@media (width<=824px) {
+  .section-hero {
+    gap: 5rem;
+  }
+  .section-hero--cans-container {
+  }
+
+  .nav_link {
+    font-size: 1.4rem;
+  }
+  .section-hero--logo-text {
+    width: 60%;
+  }
+  .section-hero--order-btn {
+    padding: 10px 42px;
+    font-size: 1.2rem;
+  }
+  .section-about--portraitContainer {
+    height: 100%;
+    width: 70%;
+  }
+  .section-about--portrait {
+    height: 100%;
+    width: 100%;
+  }
+  .section-hero--subheading {
+    /* font-size: 1rem; */
+    letter-spacing: 0.25px;
+  }
+  .section-hero--features-list {
+    font-size: 1.2rem;
+    line-height: 0.5px;
+    gap: 0.4rem;
+  }
+  .section-about--heading {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .section-about--text {
+    font-size: 0.8rem;
+  }
+  .production-stages--heading {
+    font-size: 1.2rem;
+  }
+  .production-stages--number {
+    font-size: 4rem;
+  }
+  .production-stages {
+    gap: 3.6rem;
+  }
+  .section-about {
+    gap: 5.6rem;
+  }
+   .btn-submit--mobile {
+    display: block;
+    width: 100%;
+    margin-top: 4.8rem;
+  }
+  .btn-submit {
+    display: none;
+  }
+}
+
+@media (width<=624px) {
+  .section-hero--logo-text{
+    width: 70%;
+  }
+  .section-hero--cans-image{
+    width: 65%;
+  }
+  .production-stages {
+    display: block;
+    position: relative;
+    padding-bottom: 6.8rem;
+  }
+  .production-stages--heading,
+  .production-stages--content {
+    position: absolute;
+    left: 20%;
+    line-height: 1.35;
+  }
+  .production-stages--content {
+    width: 75%;
+    top: 35%;
+  }
+  .section-contact--heading{
+    display: none;
+  }
+  .section-contact {
+    width: 100%;
+    padding: 0;
+  }
+  .contact-form {
+    display: block;
+  }
+  .btn-submit {
+    display: none;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .btn-submit--mobile {
+    width: 100%;
+    margin-top: 4.8rem;
+  }
+  .input {
+    width: 100%;
+  }
+  .contact-form--comment,
+  .input {
+    padding: 1rem 0.6rem 1rem 0.4rem;
+  }
+  .form-divider {
+    width: 80%;
+  }
+  .contact-form {
+    margin: 0 auto;
+    width: 80%;
   }
 }

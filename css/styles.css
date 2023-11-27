@@ -475,8 +475,14 @@
   font-size: 1.6rem;
   padding: 1.2rem;
 }
-.label-terms {
+.confidential-policies {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   font-size: 1.2rem;
+  width: 100%;
+}
+.label-policies {
 }
 .btn-submit {
   background: none;
@@ -642,4 +648,8 @@
   left: 0;
   font-size: 1rem;
   color: red;
+}
+
+.btn-submit--mobile{
+  display: none;
 }
