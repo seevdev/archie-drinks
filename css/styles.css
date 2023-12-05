@@ -468,6 +468,9 @@
 .inputs-container {
   margin-bottom: 7.2rem;
 }
+.form-comment--label {
+  font-size: 1.2rem;
+}
 .contact-form--comment {
   border: none;
   border-bottom: 1px solid #000;
@@ -475,6 +478,7 @@
   font-size: 1.6rem;
   padding: 1.2rem;
 }
+
 .confidential-policies {
   display: flex;
   align-items: center;
@@ -482,8 +486,7 @@
   font-size: 1.2rem;
   width: 100%;
 }
-.label-policies {
-}
+
 .btn-submit {
   background: none;
   border: none;
@@ -553,7 +556,6 @@
   background: #212121;
   z-index: -1;
   min-height: 25vh;
-  justify-content: end;
   padding: 2.4rem 30% 0 0;
 }
 
@@ -617,6 +619,24 @@
   font-size: 1.2rem;
 }
 
+/* MOBILE */
+.btn-menu {
+  background-image: url(../assets/images/archie-portrait.svg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  border: none;
+  background-color: #fafafe;
+  filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.2));
+  border-radius: 50%;
+  cursor: pointer;
+}
+.menu-icon {
+  width: 24px;
+  height: 24px;
+}
 /* HELPERS */
 
 [contentEditable='true']:empty:not(:focus):before {
@@ -650,6 +670,6 @@
   color: red;
 }
 
-.btn-submit--mobile{
+.btn-submit--mobile {
   display: none;
 }

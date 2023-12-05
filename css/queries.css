@@ -2,7 +2,7 @@
   .section-hero--cans-image {
     width: 25vw;
   }
-  
+
   .section-hero--logo-text {
     /* width: 25vw;
     width: 20vw; */
@@ -59,7 +59,7 @@
   }
 
   .section-about--description {
-    min-width: 100px;
+    /* min-width: 100px; */
     margin-bottom: 4.8rem;
   }
 
@@ -161,7 +161,7 @@
   }
 
   .section-about--text {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .section-about--portrait {
@@ -214,7 +214,7 @@
   }
 
   .footer-image {
-    width: 45%;
+    width: 165px;
   }
 
   .footer-description {
@@ -262,7 +262,7 @@
   .section-hero {
     gap: 5rem;
   }
-  
+
   .section-hero--cans-container {
   }
 
@@ -294,7 +294,7 @@
     gap: 0.4rem;
   }
   .section-about--heading {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     letter-spacing: 1px;
   }
   .section-about--text {
@@ -312,22 +312,26 @@
   .section-about {
     gap: 5.6rem;
   }
-   .btn-submit--mobile {
+  .contact-form {
     display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .contact-form--info {
     width: 100%;
+    margin: 0 auto;
+  }
+  .btn-submit--mobile {
+    display: block;
+    width: 350px;
     margin-top: 4.8rem;
   }
   .btn-submit {
     display: none;
   }
-}
-
-@media (width<=624px) {
-  .section-hero--logo-text{
-    width: 70%;
-  }
-  .section-hero--cans-image{
-    width: 65%;
+  .contact-form--comment,
+  .input {
+    padding: 1rem 0.6rem 1rem 0.4rem;
   }
   .production-stages {
     display: block;
@@ -344,16 +348,35 @@
     width: 75%;
     top: 35%;
   }
-  .section-contact--heading{
+}
+
+@media (width<=624px) {
+  nav{
+    display: none;
+  }
+  .section-hero--logo-text {
+    width: 70%;
+  }
+  .section-hero{
+    position: relative;
+    width: 100%;
+    padding-top: 4.8rem;
+  }
+  .section-hero--cans-image {
+    width: 190px;
+    position: absolute;
+    right: -100px;
+
+  }
+
+  .section-contact--heading {
     display: none;
   }
   .section-contact {
     width: 100%;
     padding: 0;
   }
-  .contact-form {
-    display: block;
-  }
+
   .btn-submit {
     display: none;
   }
@@ -367,15 +390,29 @@
   .input {
     width: 100%;
   }
-  .contact-form--comment,
-  .input {
-    padding: 1rem 0.6rem 1rem 0.4rem;
-  }
+
   .form-divider {
-    width: 80%;
+    width: 45%;
   }
   .contact-form {
     margin: 0 auto;
     width: 80%;
+  }
+
+  .footer-image,
+  .footer-image--container {
+    display: none;
+  }
+
+  .section-footer {
+    justify-content: start;
+  }
+  .footer-info {
+    right: 50%;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+  .footer-logo{
+    width: 95px;
   }
 }
