@@ -620,16 +620,37 @@
 }
 
 /* MOBILE */
+.section-hero--logo-mobile{
+  width: 150px;
+  height: auto;
+}
+
+.logo-menuBtn--container {
+  display: none;
+  width: 70vw;
+  gap: 4.8rem;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  
+
+}
 .btn-menu {
-  background-image: url(../assets/images/archie-portrait.svg);
+  background: none;
+  background-image: url(../assets/images/Vector.svg);
+  background-size: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem;
+  width: 68px;
+  height: 68px;
   border: none;
-  background-color: #fafafe;
-  filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.2));
+  padding: 0;
+  margin: 0;
+  /* background-color: #fafafe; */
+  /* filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.2)); */
   border-radius: 50%;
   cursor: pointer;
 }
@@ -637,6 +658,11 @@
   width: 24px;
   height: 24px;
 }
+
+.btn-submit--mobile {
+  display: none;
+}
+
 /* HELPERS */
 
 [contentEditable='true']:empty:not(:focus):before {
@@ -670,6 +696,6 @@
   color: red;
 }
 
-.btn-submit--mobile {
-  display: none;
+.flex {
+  display: flex;
 }

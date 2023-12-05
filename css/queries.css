@@ -351,22 +351,42 @@
 }
 
 @media (width<=624px) {
-  nav{
+  nav {
     display: none;
+  }
+  .section-hero{
+    margin-top: 3.2rem;
+    padding: 0.8rem;
+  }
+  .section-hero--logo-text {
+    display: none;
+  }
+
+  .section-hero--content{
+    margin-top: 10rem;
+
+  }
+  .logo-menuBtn--container {
+    display: flex;
   }
   .section-hero--logo-text {
     width: 70%;
   }
-  .section-hero{
+
+  .section-hero--logo-text {
+    width: 120px;
+    height: 100%;
+    margin-bottom: 4.7rem;
+  }
+  .section-hero {
     position: relative;
     width: 100%;
     padding-top: 4.8rem;
   }
   .section-hero--cans-image {
-    width: 190px;
+    width: 150px;
     position: absolute;
     right: -100px;
-
   }
 
   .section-contact--heading {
@@ -412,7 +432,14 @@
     padding-left: 2.4rem;
     padding-right: 2.4rem;
   }
-  .footer-logo{
+  .footer-logo {
     width: 95px;
+  }
+
+  .section-about--text {
+    display: none;
+  }
+  .section-about--heading {
+    display: none;
   }
 }
