@@ -354,17 +354,25 @@
   nav {
     display: none;
   }
-  .section-hero{
+  .section-hero--order-btn{
+    width: 100%;
+  }
+  .section-hero {
     margin-top: 3.2rem;
     padding: 0.8rem;
+  }
+  .section-hero--subheading {
+    display: none;
+  }
+  .section-hero--subheading-mobile {
+    display: block;
   }
   .section-hero--logo-text {
     display: none;
   }
 
-  .section-hero--content{
+  .section-hero--content {
     margin-top: 10rem;
-
   }
   .logo-menuBtn--container {
     display: flex;
@@ -386,7 +394,11 @@
   .section-hero--cans-image {
     width: 150px;
     position: absolute;
-    right: -100px;
+    top: 5rem;
+    right: -110px;
+  }
+  .spot-one--hero_can {
+    display: none;
   }
 
   .section-contact--heading {
