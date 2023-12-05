@@ -2,6 +2,7 @@
   .section-hero--cans-image {
     width: 25vw;
   }
+  
   .section-hero--logo-text {
     /* width: 25vw;
     width: 20vw; */
@@ -261,6 +262,7 @@
   .section-hero {
     gap: 5rem;
   }
+  
   .section-hero--cans-container {
   }
 
