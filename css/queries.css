@@ -350,15 +350,16 @@
   }
 }
 
-@media (width<=624px) {
+@media (width<=526px) {
   nav {
     display: none;
   }
-  .section-hero--order-btn{
+  .section-hero--order-btn {
     width: 100%;
   }
   .section-hero {
     margin-top: 3.2rem;
+    margin-bottom: 30rem;
     padding: 0.8rem;
   }
   .section-hero--subheading {
@@ -448,10 +449,31 @@
     width: 95px;
   }
 
+  .section-about{
+    flex-flow:column-reverse;
+  }
   .section-about--text {
     display: none;
   }
   .section-about--heading {
     display: none;
+  }
+
+  .section-hero--order-btn {
+    position: absolute;
+    width: 80%;
+    bottom: -40%;
+    left: 10%;
+    padding: 18px 36px;
+    font-size: 1.8rem;
+  }
+  .section-about--description{
+    width: 100%;
+    height: 150px;
+    font-size: 2rem;
+    margin: 0;
+  }
+  .section-about--portrait{
+    margin: 0;
   }
 }
