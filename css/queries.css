@@ -399,7 +399,7 @@
     right: -110px;
   }
   .spot-one--hero_can {
-    display: none;
+    display: block;
   }
 
   .section-contact--heading {
@@ -452,12 +452,12 @@
   .section-about{
     flex-flow:column-reverse;
   }
-  .section-about--text {
+/*   .section-about--text { */
+/*     display: none;
+  } */
+/*   .section-about--heading {
     display: none;
-  }
-  .section-about--heading {
-    display: none;
-  }
+  } */
 
   .section-hero--order-btn {
     position: absolute;
