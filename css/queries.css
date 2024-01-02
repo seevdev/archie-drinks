@@ -348,6 +348,12 @@
     width: 75%;
     top: 35%;
   }
+  .form-divider {
+    width: 45%;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
 }
 
 @media (width<=526px) {
@@ -430,6 +436,9 @@
 
   .form-divider {
     width: 45%;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
   .contact-form {
     margin: 0 auto;
@@ -456,7 +465,7 @@
   .section-about {
     flex-flow: column-reverse;
   }
-  
+
   .section-about--heading {
     letter-spacing: 1.75px;
     font-size: 3.2rem;
@@ -484,11 +493,11 @@
     font-size: 2rem;
     margin: 0;
   }
-  .section-about--text{
+  .section-about--text {
     font-size: 1.4rem;
   }
 
-  .section-about--portraitContainer{
+  .section-about--portraitContainer {
     justify-content: center;
   }
   .section-about--portrait {
@@ -497,27 +506,33 @@
   }
 
   /* ACCORDION */
-  .accordion-container{
+  .accordion-container {
     width: 300px;
     border-radius: 13px;
     padding: 1.2rem 2.4rem;
+    margin-bottom: 8.6rem;
   }
- 
-  .accordion-icon{
+
+  .accordion-icon {
     width: 24px;
     height: 24px;
   }
 
-  .production-stages--content{
+  .production-stages--content {
     top: 35px;
   }
 
-  .production-stages--number{
+  .production-stages--number {
     font-size: 4.8rem;
   }
 
   .production-stages--heading,
   .production-stages--content {
     left: 25%;
+  }
+
+  /* PRODUCTION STAGES */
+  .production-stages {
+    padding-bottom: 9.6rem;
   }
 }
