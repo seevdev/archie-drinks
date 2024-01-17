@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="nav">
         <ul class="nav-links">
           <li><a class="nav_link" href="#section--1">О компании</a></li>
           <li><a class="nav_link" href="#section--3">Этапы разработки</a></li>
@@ -25,18 +25,50 @@
         </ul>
       </nav>
       <nav class="nav-mobile">
-        <div>
-          <div>logo</div>
-          <button>button</button>
-        </div>
-        <ul>
-          <li class="navlink-mobile">О компании</li>
-          <li class="navlink-mobile">Особенности</li>
-          <li class="navlink-mobile">Этапы</li>
-          <li class="navlink-mobile">Ассортимент</li>
+        <header class="nav-mobile--header">
+          <div class="nav-mobile--logo">
+            <img src="./public/images/archie-drinks-logo.svg" alt="Logo" />
+          </div>
+          <button class="nav-mobile--btn">
+            <div>
+              <div>
+                <img
+                  class="nav-mobile_btn--background"
+                  src="public/images/vector.svg"
+                  alt="Navigation button"
+                />
+              </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="nav-mobile_btn--icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          </button>
+        </header>
+        <ul class="nav-mobile--list">
+          <li><a class="navlink-mobile" href="#">О компании</a></li>
+          <li class="navlink-mobile"><a href="#">Особенности</a></li>
+          <li class="navlink-mobile"><a href="#">Этапы</a></li>
+          <li class="navlink-mobile"><a href="#">Ассортимент</a></li>
+          <li class="navlink-mobile"><a href="#">Форма заявки</a></li>
         </ul>
-        <div>Arvhie drinks</div>
-        <div>rights reserved</div>
+        <p>
+          Archie Drinks <br />
+          Best ever company to produce functional beverages
+        </p>
+        <div class="nav-mobile--span">Archie drinks</div>
+        <div class="nav-mobile-span">rights reserved</div>
       </nav>
     </header>
     <main>

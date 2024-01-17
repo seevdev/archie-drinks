@@ -25,13 +25,13 @@
 
 @media (width <=1260px) {
   section,
-  nav {
+  .nav {
     padding: 0 4.8rem;
   }
   .wrapper {
     width: 95vw;
   }
-  nav {
+  .nav {
     padding: 2.4rem 4.8rem;
   }
 
@@ -357,7 +357,7 @@
 }
 
 @media (width<=526px) {
-  nav {
+  .nav {
     display: none;
   }
   section {

@@ -648,7 +648,6 @@
   background: none;
   background-image: url(../assets/images/Vector.svg);
   background-size: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -669,6 +668,56 @@
 
 .btn-submit--mobile {
   display: none;
+}
+
+.nav-mobile {
+  background-color: #1a1a1a;
+  width: 375px;
+  height: 667px;
+  color: #fff;
+  font-family: GT Walsheim Pro;
+  font-size: 38px;
+  padding: 1.2rem;
+}
+
+.nav-mobile--header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.nav-mobile--logo {
+}
+
+.nav-mobile--btn {
+  position: relative;
+  background: none;
+  border: none;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.nav-mobile_btn--background {
+  width: 100%;
+}
+.nav-mobile_btn--icon {
+  position: absolute;
+  color: #080708;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  right: 15px;
+}
+.nav-mobile--list {
+  list-style-type: none;
+}
+
+.navlink-mobile {
+  color: #fff;
+}
+.nav-mobile--span {
 }
 
 /* HELPERS */
