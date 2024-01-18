@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
   //SELECTIONS
 
   const carouselContent = document.querySelectorAll('.carousel-card--content');
+  const btnMenu = document.querySelector('.btn-menu');
+  const navMobile = document.querySelector('.nav-mobile');
+  const btnNavMobile = document.querySelector('.nav-mobile--btn');
 
   // (() => {
   //   carouselContentToggle(carouselContent);
@@ -108,10 +111,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // CONTACT FORM VALIDATION
+
   const orderBtn = document.querySelector('.btn-submit');
 
   function orderBtnHandler() {
     let error = '';
+
     // FirstName Validation
     const firstName = document.querySelector('[name="firstName"]');
     console.log(firstName.value);
@@ -159,4 +164,21 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', () => {
     carouselContentToggle(carouselContent);
   });
+
+  //  NAV MOBILE
+
+  //OPEN NAV MENU
+
+  function btnMenuHandler() {
+    navMobile.style.right = '0';
+  }
+  btnMenu.addEventListener('click', btnMenuHandler);
+
+  //CLOSE NAV MENU
+
+  function btnNavMobileHandler() {
+    navMobile.style.right = '-100%';
+  }
+
+  btnNavMobile.addEventListener('click', btnNavMobileHandler);
 });

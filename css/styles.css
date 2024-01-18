@@ -676,10 +676,11 @@
   right: -100%;
   width: 375px;
   height: 667px;
-  padding: 2.4rem; 
+  padding: 2.4rem;
   color: #fff;
   background-color: #1a1a1a;
   font-family: GT Walsheim Pro;
+  transition: all 0.3s;
   z-index: 999999;
 }
 
@@ -690,7 +691,6 @@
   padding-top: 1.2rem;
   margin-bottom: 4.8rem;
 }
-
 
 .nav-mobile--btn {
   position: relative;
@@ -719,7 +719,6 @@
   gap: 2.4rem;
   margin-bottom: 9.6rem;
   font-size: 38px;
-
 }
 
 .navlink-mobile:link,
@@ -727,21 +726,25 @@
   color: #fff;
   text-decoration: none;
 }
+
 .nav-mobile--text {
   font-size: 1.2rem;
   font-weight: 300;
-  line-height: 115%; 
+  line-height: 115%;
   opacity: 0.75;
 }
-.nav-mobile_description{
+
+.nav-mobile_description {
   margin-bottom: 2.4rem;
 }
+
 /* HELPERS */
 
 [contentEditable='true']:empty:not(:focus):before {
   content: attr(data-text);
   font-size: 1.2rem;
 }
+
 .hidden {
   display: none;
 }
