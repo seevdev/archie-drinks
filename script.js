@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } else {
       [...content].map((info) => {
+        ``;
         info.classList.remove('hidden');
       });
     }
@@ -167,10 +168,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //  NAV MOBILE
 
+ 
   //OPEN NAV MENU
 
   function btnMenuHandler() {
     navMobile.style.right = '0';
+    document.querySelector('html').style.overflowY = 'hidden';
   }
   btnMenu.addEventListener('click', btnMenuHandler);
 
@@ -178,6 +181,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function btnNavMobileHandler() {
     navMobile.style.right = '-100%';
+    document.querySelector('html').style.overflowY = 'scroll';
+
   }
 
   btnNavMobile.addEventListener('click', btnNavMobileHandler);

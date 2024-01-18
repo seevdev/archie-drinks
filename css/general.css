@@ -8,6 +8,7 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
+
 }
 
 /* Custom font-family */
@@ -30,8 +31,8 @@ html {
   font-display: swap;
 }
 
-:root{
-  --main-font-color:#060606;
+:root {
+  --main-font-color: #060606;
 }
 
 body {
@@ -43,14 +44,17 @@ body {
   overflow-x: hidden;
 }
 
-.header-main{
+.header-main {
   position: relative;
 }
-.heading{
+.heading {
   font-size: 3.8rem;
 }
+
 a:link,
-a:visited {
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
   color: #060606;
 }
