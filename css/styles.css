@@ -681,6 +681,8 @@
   background-color: #1a1a1a;
   font-family: GT Walsheim Pro;
   transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  /* -webkit-transition: -webkit-transform 0.3s; */
   z-index: 999999;
 }
 
