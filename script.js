@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnMenu = document.querySelector('.btn-menu');
   const navMobile = document.querySelector('.nav-mobile');
   const btnNavMobile = document.querySelector('.nav-mobile--btn');
+  const navMobileList = document.querySelector('.nav-mobile--list');
+  const navMobileLinks = document.querySelectorAll('.navlink-mobile');
 
   // (() => {
   //   carouselContentToggle(carouselContent);
@@ -168,22 +170,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //  NAV MOBILE
 
- 
+  //EVENT LISTENERS
+  btnNavMobile.addEventListener('click', btnNavMobileHandler);
+  btnMenu.addEventListener('click', btnMenuHandler);
+  navMobileList.addEventListener('click', navMobileListHandler);
+
   //OPEN NAV MENU
 
   function btnMenuHandler() {
     navMobile.style.right = '0';
     document.querySelector('html').style.overflowY = 'hidden';
   }
-  btnMenu.addEventListener('click', btnMenuHandler);
 
   //CLOSE NAV MENU
 
   function btnNavMobileHandler() {
     navMobile.style.right = '-100%';
     document.querySelector('html').style.overflowY = 'scroll';
-
   }
 
-  btnNavMobile.addEventListener('click', btnNavMobileHandler);
+  //NAV LIST
+  function navMobileListHandler(e) {
+    e.preventDefault();
+    console.log(e.target.classList);
+
+    if (e.target.classList.contains('navlink-mobile')) {
+      e.target.style.color = '#00f1d4';
+
+      navMobile.style.right = '-100%';
+
+      const id = e.target.getAttribute('href');
+
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth',
+      });
+      document.querySelector('html').style.overflowY = 'scroll';
+
+      navMobileLinks.forEach((link) => {
+        link.style.color = '#FFF';
+      });
+    }
+  }
 });

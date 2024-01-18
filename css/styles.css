@@ -775,3 +775,8 @@
 .flex {
   display: flex;
 }
+#section--1,
+#section--2,
+#section--5 {
+  scroll-margin-top: 3.2rem;
+}

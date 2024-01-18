@@ -8,7 +8,6 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
-
 }
 
 /* Custom font-family */
@@ -43,6 +42,8 @@ body {
   color: #060606;
   overflow-x: hidden;
 }
+
+
 
 .header-main {
   position: relative;
