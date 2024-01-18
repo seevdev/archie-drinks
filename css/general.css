@@ -43,6 +43,9 @@ body {
   overflow-x: hidden;
 }
 
+.header-main{
+  position: relative;
+}
 .heading{
   font-size: 3.8rem;
 }
