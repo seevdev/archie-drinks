@@ -535,4 +535,13 @@
   .production-stages {
     padding-bottom: 9.6rem;
   }
+
+  /* CAROUSEL */
+  .carousel-card{
+    height: 350px;
+    
+  }
+  .carousel-card--image{
+    width: 50%;
+  }
 }
