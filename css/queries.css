@@ -537,11 +537,21 @@
   }
 
   /* CAROUSEL */
-  .carousel-card{
+  .carousel-card {
+    width: 500px;
     height: 350px;
-    
   }
-  .carousel-card--image{
+  .carousel-card--image {
     width: 50%;
+  }
+
+  .cards-container--1,
+  .cards-container--2,
+  .cards-container--3 {
+    gap: 1.2rem;
+  }
+  .slider {
+    gap: 1.3rem;
+    width: max-content;
   }
 }

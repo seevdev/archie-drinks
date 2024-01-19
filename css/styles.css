@@ -352,7 +352,7 @@
 }
 
 .carousel-card {
-  flex: 0 0 255px;
+  /* flex: 0 0 255px; */
   position: relative;
   display: flex;
   flex-flow: column;

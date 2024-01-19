@@ -72,8 +72,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
     const leftHandle = document.querySelector('.left-handle');
     const cards = slider.querySelectorAll('.carousel-card').length + 1;
-    console.log(cards);
-    let cardsPerPage = 7;
+
+    let cardsPerPage;
+    if (window.innerWidth <= 824) {
+      cardsPerPage = 3;
+    }
+    if (window.innerWidth <= 526) {
+      cardsPerPage = 1;
+    } else {
+      cardsPerPage = 7;
+    }
 
     // Pages = cards / cardsPerPage
 
