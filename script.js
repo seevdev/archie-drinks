@@ -53,60 +53,87 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  //CAROUSEL
+  //Carousel 2
 
-  document.addEventListener('click', (e) => {
+  const slider = document.querySelector('.slider');
+  slider.addEventListener('click', (e) => {
     let handle;
     if (e.target.matches('.handle')) {
       handle = e.target;
     } else {
       handle = e.target.closest('.handle');
     }
-    if (handle != null) {
+    if (handle !== null) {
       onHandleClick(handle);
     }
   });
 
   function onHandleClick(handle) {
-    const slider = document.querySelector('.slider');
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
     const leftHandle = document.querySelector('.left-handle');
     const cards = slider.querySelectorAll('.carousel-card').length + 1;
 
-    let cardsPerPage;
-    if (window.innerWidth <= 824) {
-      cardsPerPage = 3;
-    }
-    if (window.innerWidth <= 526) {
-      cardsPerPage = 1;
-    } else {
-      cardsPerPage = 7;
-    }
+    let cardsPerPage = 7;
 
-    // Pages = cards / cardsPerPage
+    if(handle.classList.contains('left-handle')){
 
-    if (handle.classList.contains('left-handle')) {
-      if (sliderIndex > 0 && sliderIndex <= Math.trunc(cards / cardsPerPage)) {
-        slider.style.setProperty('--slider-index', --sliderIndex); //looks funny
-      }
-      if (sliderIndex === 0) {
-        leftHandle.classList.add('hidden');
-      }
-    }
-
-    if (handle.classList.contains('right-handle')) {
-      if (
-        sliderIndex > Math.trunc(cards / cardsPerPage) ||
-        sliderIndex === Math.trunc(cards / cardsPerPage)
-      ) {
-        slider.style.setProperty('--slider-index', 0);
-        leftHandle.classList.add('hidden');
-      } else {
-        slider.style.setProperty('--slider-index', sliderIndex + 1);
-        leftHandle.classList.remove('hidden');
-      }
     }
   }
+
+  //CAROUSEL
+
+  // document.addEventListener('click', (e) => {
+  //   let handle;
+  //   if (e.target.matches('.handle')) {
+  //     handle = e.target;
+  //   } else {
+  //     handle = e.target.closest('.handle');
+  //   }
+  //   if (handle != null) {
+  //     onHandleClick(handle);
+  //   }
+  // });
+
+  // function onHandleClick(handle) {
+  //   const slider = document.querySelector('.slider');
+  //   let sliderIndex = +slider.style.getPropertyValue('--slider-index');
+  //   const leftHandle = document.querySelector('.left-handle');
+  //   const cards = slider.querySelectorAll('.carousel-card').length + 1;
+
+  //   let cardsPerPage;
+  //   if (window.innerWidth <= 824) {
+  //     cardsPerPage = 3;
+  //   }
+  //   if (window.innerWidth <= 526) {
+  //     cardsPerPage = 1;
+  //   } else {
+  //     cardsPerPage = 7;
+  //   }
+
+  //   // Pages = cards / cardsPerPage
+
+  //   if (handle.classList.contains('left-handle')) {
+  //     if (sliderIndex > 0 && sliderIndex <= Math.trunc(cards / cardsPerPage)) {
+  //       slider.style.setProperty('--slider-index', --sliderIndex); //looks funny
+  //     }
+  //     if (sliderIndex === 0) {
+  //       leftHandle.classList.add('hidden');
+  //     }
+  //   }
+
+  //   if (handle.classList.contains('right-handle')) {
+  //     if (
+  //       sliderIndex > Math.trunc(cards / cardsPerPage) ||
+  //       sliderIndex === Math.trunc(cards / cardsPerPage)
+  //     ) {
+  //       slider.style.setProperty('--slider-index', 0);
+  //       leftHandle.classList.add('hidden');
+  //     } else {
+  //       slider.style.setProperty('--slider-index', sliderIndex + 1);
+  //       leftHandle.classList.remove('hidden');
+  //     }
+  //   }
+  // }
 
   function errorMessage(error, node) {
     // document.querySelector(`${node.closest('div')}`);
