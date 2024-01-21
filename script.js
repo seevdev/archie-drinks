@@ -73,10 +73,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const leftHandle = document.querySelector('.left-handle');
     const cards = slider.querySelectorAll('.carousel-card').length + 1;
 
-    let cardsPerPage = 7;
+    let cardsPerPage = 6;
 
-    if(handle.classList.contains('left-handle')){
+    if (handle.classList.contains('left-handle')) {
+      //MOVE SLIDER TO THE LEFT
+      if (sliderIndex > 0 && sliderIndex < Math.trunc(cards / cardsPerPage)) {
+        slider.style.setProperty('--slider-index', --sliderIndex);
+      }
+      if (sliderIndex === 0) {
+        leftHandle.classList.add('hidden');
+      }
+    }
 
+    if (handle.classList.contains('right-handle')) {
+      //RETURN SLIDER TO THE FIRST ITEM
+      console.log(sliderIndex);
+      console.log(cards);
+      console.log(cardsPerPage);
+      console.log(Math.trunc(cards / cardsPerPage));
+      if (
+        (sliderIndex > 0 && sliderIndex > Math.trunc(cards / cardsPerPage)) ||
+        (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
+      ) {
+        slider.style.setProperty('--sliderIndex', 0);
+        leftHandle.classList.add('hidden');
+      }
+
+      // MOVE SLIDER TO THE RIGHT
+
+      if (sliderIndex === 0 || sliderIndex < Math.trunc(cards / cardsPerPage)) {
+        slider.style.setProperty('--slider-index', sliderIndex + 1);
+        leftHandle.classList.remove('hidden');
+      }
     }
   }
 
