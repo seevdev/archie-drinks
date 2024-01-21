@@ -320,6 +320,7 @@
 /* SECTION-PRODUCTS */
 
 .section-products {
+  position: relative;
   margin-bottom: 17.6rem;
 }
 
@@ -397,13 +398,12 @@
 }
 .slider {
   --slider-index: 0;
+  width: 100%;
   transform: translateX(calc(var(--slider-index) * -100%));
   transition: transform 250ms ease-in-out;
-  position: relative;
   height: 400px;
   display: flex;
   gap: 1.2rem;
-  overflow: hidden;
 }
 .handle {
   display: flex;

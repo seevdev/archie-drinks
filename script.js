@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //Carousel 2
 
   const slider = document.querySelector('.slider');
-  slider.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     let handle;
     if (e.target.matches('.handle')) {
       handle = e.target;
@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (handle.classList.contains('left-handle')) {
       //MOVE SLIDER TO THE LEFT
+
       if (sliderIndex > 0 && sliderIndex < Math.trunc(cards / cardsPerPage)) {
         slider.style.setProperty('--slider-index', --sliderIndex);
       }
@@ -87,22 +88,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (handle.classList.contains('right-handle')) {
       //RETURN SLIDER TO THE FIRST ITEM
-      console.log(sliderIndex);
-      console.log(cards);
-      console.log(cardsPerPage);
-      console.log(Math.trunc(cards / cardsPerPage));
+
       if (
         (sliderIndex > 0 && sliderIndex > Math.trunc(cards / cardsPerPage)) ||
         (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
       ) {
-        slider.style.setProperty('--sliderIndex', 0);
+        slider.style.setProperty('--slider-index', 0);
         leftHandle.classList.add('hidden');
       }
 
       // MOVE SLIDER TO THE RIGHT
 
       if (sliderIndex === 0 || sliderIndex < Math.trunc(cards / cardsPerPage)) {
-        slider.style.setProperty('--slider-index', sliderIndex + 1);
+        slider.style.setProperty('--slider-index', ++sliderIndex);
         leftHandle.classList.remove('hidden');
       }
     }
