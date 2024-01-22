@@ -494,7 +494,7 @@
   }
 
   .production-stages--content {
-    top: 33px;
+    top: 38px;
   }
 
   .production-stages--number {
@@ -510,8 +510,6 @@
   .production-stages {
     padding-bottom: 9.6rem;
   }
-
-
 
   .slider {
     gap: 1.3rem;
