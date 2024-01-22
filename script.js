@@ -69,19 +69,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  window.addEventListener('resize', () => {
+    let cardWidth = Number(
+      getComputedStyle(card).width.split('').slice(0, -2).join('')
+    );
+    
+    // console.log(cardWidth);
+
+    let cardsPerPage = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue('--cards-per-page');
+    if (cardWidth <= 265) {
+      console.log('<=265');
+      cardsPerPage = cardsPerPage - 1;
+      document.documentElement.style.setProperty(
+        '--cards-per-page',
+        cardsPerPage
+      );
+    }
+  });
+
+
+
   function onHandleClick(handle) {
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
     const leftHandle = document.querySelector('.left-handle');
     const cards = slider.querySelectorAll('.carousel-card').length + 1;
-    let cardsPerPage = window
-      .getComputedStyle(document.documentElement)
-      .getPropertyValue('--cards-per-page');
-
-   let cardWidth = getComputedStyle(card)
-   console.log(cardWidth);
 
     if (handle.classList.contains('left-handle')) {
-
       //MOVE SLIDER TO THE LEFT//
 
       if (sliderIndex > 0 && sliderIndex <= Math.trunc(cards / cardsPerPage)) {
@@ -94,8 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (handle.classList.contains('right-handle')) {
       //RETURN SLIDER TO THE FIRST ITEM
-      console.log(sliderIndex);
-      console.log(window.innerWidth);
+
       if (
         (sliderIndex > 0 && sliderIndex > Math.trunc(cards / cardsPerPage)) ||
         (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
