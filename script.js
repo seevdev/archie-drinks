@@ -10,12 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const navMobileList = document.querySelector('.nav-mobile--list');
   const navMobileLinks = document.querySelectorAll('.navlink-mobile');
   const card = document.querySelector('.carousel-card');
+  const headerOrderBtn = document.querySelector('.section-hero--order-btn');
 
   // (() => {
   //   carouselContentToggle(carouselContent);
   // })();
 
-  document.querySelector('.nav-links').addEventListener('click', function (e) {
+  document.querySelector('.nav-links').addEventListener('click', scrollHandler);
+
+  headerOrderBtn.addEventListener('click', scrollHandler);
+
+  function scrollHandler(e) {
     e.preventDefault();
     if (e.target.classList.contains('nav_link')) {
       const id = e.target.getAttribute('href');
@@ -23,8 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         behavior: 'smooth',
       });
     }
-  });
-
+  }
   // ACCORDION
 
   const accordionItems = document.querySelectorAll('.accordion-item');
@@ -73,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let cardWidth = Number(
       getComputedStyle(card).width.split('').slice(0, -2).join('')
     );
-    
+
     // console.log(cardWidth);
 
     let cardsPerPage = window
@@ -88,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
       );
     }
   });
-
-
 
   function onHandleClick(handle) {
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
