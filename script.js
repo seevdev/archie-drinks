@@ -73,7 +73,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const leftHandle = document.querySelector('.left-handle');
     const cards = slider.querySelectorAll('.carousel-card').length + 1;
 
-    let cardsPerPage = 6;
+    let cardsPerPage;
+
+    if (window.innerWidth <= 1920) {
+      cardsPerPage = 6;
+    }
+    if (window.innerWidth <= 1260) {
+      cardsPerPage = 5;
+    }
+    if (window.innerWidth <= 1108) {
+      cardsPerPage = 4;
+    }
+    if (window.innerWidth <= 678) {
+      cardsPerPage = 3;
+    }
+    if (window.innerWidth <= 451) {
+      cardsPerPage = 2;
+    }
+    if (window.innerWidth <= 390) {
+      cardsPerPage = 1;
+    }
 
     if (handle.classList.contains('left-handle')) {
       //MOVE SLIDER TO THE LEFT
@@ -88,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (handle.classList.contains('right-handle')) {
       //RETURN SLIDER TO THE FIRST ITEM
-
+      console.log(sliderIndex);
+      console.log(window.innerWidth);
       if (
         (sliderIndex > 0 && sliderIndex > Math.trunc(cards / cardsPerPage)) ||
         (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
@@ -99,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // MOVE SLIDER TO THE RIGHT
 
-      if (sliderIndex === 0 || sliderIndex < Math.trunc(cards / cardsPerPage)) {
+      if (sliderIndex >= 0 && sliderIndex < Math.trunc(cards / cardsPerPage)) {
         slider.style.setProperty('--slider-index', ++sliderIndex);
         leftHandle.classList.remove('hidden');
       }
