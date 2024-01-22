@@ -151,6 +151,7 @@
   border-radius: 0.8rem;
   font-weight: 700;
   cursor: pointer;
+  color: var(--main-font-color);
 }
 
 /* SECTION ABOUT */
