@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnNavMobile = document.querySelector('.nav-mobile--btn');
   const navMobileList = document.querySelector('.nav-mobile--list');
   const navMobileLinks = document.querySelectorAll('.navlink-mobile');
+  const card = document.querySelector('.carousel-card');
 
   // (() => {
   //   carouselContentToggle(carouselContent);
@@ -72,27 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
     const leftHandle = document.querySelector('.left-handle');
     const cards = slider.querySelectorAll('.carousel-card').length + 1;
+    let cardsPerPage = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue('--cards-per-page');
 
-    let cardsPerPage;
-
-    if (window.innerWidth <= 1920) {
-      cardsPerPage = 6;
-    }
-    if (window.innerWidth <= 1260) {
-      cardsPerPage = 5;
-    }
-    if (window.innerWidth <= 1108) {
-      cardsPerPage = 4;
-    }
-    if (window.innerWidth <= 734) {
-      cardsPerPage = 3;
-    }
-    if (window.innerWidth <= 451) {
-      cardsPerPage = 2;
-    }
-    if (window.innerWidth <= 390) {
-      cardsPerPage = 1;
-    }
+   let cardWidth = getComputedStyle(card)
+   console.log(cardWidth);
 
     if (handle.classList.contains('left-handle')) {
       //MOVE SLIDER TO THE LEFT

@@ -1,3 +1,9 @@
+@media (width<=1920px) {
+  .slider,
+  .carousel-card {
+    flex: 1 0 calc(100% / var(--cards-per-page) - var(--slider-gap));
+  }
+}
 @media (width <= 1366px) {
   .section-hero--cans-image {
     width: 25vw;
@@ -518,10 +524,10 @@
 }
 @media (width<=390px) {
   .carousel-card {
-    flex: 0 0 350px;
+    flex: 0 0 250px;
     height: 465px;
   }
   .carousel-card--image {
-    width: 35%;
+    width: 50%;
   }
 }
