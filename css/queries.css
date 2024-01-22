@@ -1,4 +1,3 @@
-
 @media (width <= 1366px) {
   .section-hero--cans-image {
     width: 25vw;
@@ -510,6 +509,10 @@
   /* PRODUCTION STAGES */
   .production-stages {
     padding-bottom: 9.6rem;
+  }
+
+  .production-stages--heading {
+    margin-bottom: 0.8rem;
   }
 
   .slider {
