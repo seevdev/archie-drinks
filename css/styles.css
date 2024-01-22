@@ -152,6 +152,7 @@
   font-weight: 700;
   cursor: pointer;
   color: var(--main-font-color);
+  -webkit-text-fill-color: var(--main-font-color)
 }
 
 /* SECTION ABOUT */
