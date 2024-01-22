@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth <= 1108) {
       cardsPerPage = 4;
     }
-    if (window.innerWidth <= 678) {
+    if (window.innerWidth <= 734) {
       cardsPerPage = 3;
     }
     if (window.innerWidth <= 451) {

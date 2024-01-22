@@ -225,31 +225,6 @@
     font-size: 1rem;
   }
 
-  .carousel-card {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 220px;
-  }
-  .carousel-card--info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .carousel-card--heading {
-    font-size: 1.8rem;
-    letter-spacing: 1.25%;
-  }
-
-  .carousel-card--content {
-    display: none;
-  }
-  .carousel-card--image {
-    width: 32%;
-  }
-  .carousel-card--heading {
-    font-size: 1.2rem;
-  }
   .products-heading {
     font-size: 2rem;
   }
@@ -536,20 +511,6 @@
     padding-bottom: 9.6rem;
   }
 
-  /* CAROUSEL */
-  .carousel-card {
-    width: 500px;
-    height: 350px;
-  }
-  .carousel-card--image {
-    width: 50%;
-  }
-
-  .cards-container--1,
-  .cards-container--2,
-  .cards-container--3 {
-    gap: 1.2rem;
-  }
   .slider {
     gap: 1.3rem;
     width: max-content;
