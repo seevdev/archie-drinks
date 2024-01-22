@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  //Carousel 2
+  //SLIDER//
 
   const slider = document.querySelector('.slider');
   document.addEventListener('click', (e) => {
@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let cardsPerPage = 6;
 
     if (handle.classList.contains('left-handle')) {
-      //MOVE SLIDER TO THE LEFT
+
+      //MOVE SLIDER TO THE LEFT//
 
       if (sliderIndex > 0 && sliderIndex < Math.trunc(cards / cardsPerPage)) {
         slider.style.setProperty('--slider-index', --sliderIndex);
@@ -87,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (handle.classList.contains('right-handle')) {
-      //RETURN SLIDER TO THE FIRST ITEM
+
+      //RETURN SLIDER TO THE FIRST ITEM//
 
       if (
         (sliderIndex > 0 && sliderIndex > Math.trunc(cards / cardsPerPage)) ||
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         leftHandle.classList.add('hidden');
       }
 
-      // MOVE SLIDER TO THE RIGHT
+      // MOVE SLIDER TO THE RIGHT//
 
       if (sliderIndex === 0 || sliderIndex < Math.trunc(cards / cardsPerPage)) {
         slider.style.setProperty('--slider-index', ++sliderIndex);
