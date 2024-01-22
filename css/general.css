@@ -32,6 +32,10 @@ html {
 
 :root {
   --main-font-color: #060606;
+  --slider-gap: 1.2rem;
+  --slider-padding: 5rem;
+  --cards-per-page: 6;
+  --card-width: calc(100% / var(--cards-per-page) - var(--slider-gap) * 2);
 }
 
 body {
@@ -42,8 +46,6 @@ body {
   color: #060606;
   overflow-x: hidden;
 }
-
-
 
 .header-main {
   position: relative;
@@ -58,8 +60,4 @@ a:hover,
 a:active {
   text-decoration: none;
   color: #060606;
-}
-
-:root {
-  --slider-padding: 5rem;
 }
