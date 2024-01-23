@@ -63,8 +63,6 @@
 .section-hero--cans-image {
   width: 100%;
   z-index: 9999;
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
 }
 
 .section-hero--cans {
