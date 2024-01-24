@@ -144,42 +144,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // CONTACT FORM VALIDATION
 
-  const orderBtn = document.querySelector('.btn-submit');
+  // const orderBtn = document.querySelector('.btn-submit');
 
-  function orderBtnHandler() {
-    let error = '';
+  // function orderBtnHandler() {
+  //   let error = '';
 
-    // FirstName Validation
-    const firstName = document.querySelector('[name="firstName"]');
-    console.log(firstName.value);
+  //   // FirstName Validation
+  //   const firstName = document.querySelector('[name="firstName"]');
+  //   console.log(firstName.value);
 
-    if (firstName.value.length + 1 < 2 || firstName.value.length + 1 > 15) {
-      error = 'Invalid name. Name needs to be at least 2 chars long';
-      errorMessage(error, firstName);
-    }
+  //   if (firstName.value.length + 1 < 2 || firstName.value.length + 1 > 15) {
+  //     error = 'Invalid name. Name needs to be at least 2 chars long';
+  //     errorMessage(error, firstName);
+  //   }
 
-    //LastName Validation
-    const lastName = document.querySelector('[name="lastName"]');
+  //   //LastName Validation
+  //   const lastName = document.querySelector('[name="lastName"]');
 
-    if (lastName.value.length + 1 < 2 || lastName.value.length + 1 > 15) {
-      error = 'Invalid last name. Name needs to be at least 2 chars long';
-      errorMessage(error, lastName);
-    }
-    //Email Validation
-    const email = document.querySelector('[email="email"]');
+  //   if (lastName.value.length + 1 < 2 || lastName.value.length + 1 > 15) {
+  //     error = 'Invalid last name. Name needs to be at least 2 chars long';
+  //     errorMessage(error, lastName);
+  //   }
+  //   //Email Validation
+  //   const email = document.querySelector('[email="email"]');
 
-    if (!email.value.matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
-      error = 'Invalid email.';
-      errorMessage(error, email);
-    }
+  //   if (!email.value.matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+  //     error = 'Invalid email.';
+  //     errorMessage(error, email);
+  //   }
 
-    //Phone Validation
-    const phone = document.querySelector('[phone]="phone"');
-  }
-  orderBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    orderBtnHandler();
-  });
+  //   //Phone Validation
+  //   const phone = document.querySelector('[phone]="phone"');
+  // }
+  // orderBtn.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   orderBtnHandler();
+  // });
 
   function carouselContentToggle(content) {
     // add type in TS
