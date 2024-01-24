@@ -563,6 +563,8 @@
   bottom: 0;
   left: 22%;
   margin-right: 5.6rem;
+  overflow: hidden;
+
 }
 
 .footer-spot--green {
@@ -602,7 +604,8 @@
 }
 
 .footer-image {
-  width: 66%;
+  width: 275px;
+  
 }
 
 .footer-logo {
