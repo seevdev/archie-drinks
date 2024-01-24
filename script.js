@@ -73,12 +73,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  let cardWidth;
   window.addEventListener('resize', () => {
-    let cardWidth = Number(
+    cardWidth = Number(
       getComputedStyle(card).width.split('').slice(0, -2).join('')
     );
 
     // console.log(cardWidth);
+  });
+
+  function onHandleClick(handle) {
+    let sliderIndex = +slider.style.getPropertyValue('--slider-index');
+    const leftHandle = document.querySelector('.left-handle');
+    const cards = slider.querySelectorAll('.carousel-card').length + 1;
 
     let cardsPerPage = window
       .getComputedStyle(document.documentElement)
@@ -91,12 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cardsPerPage
       );
     }
-  });
-
-  function onHandleClick(handle) {
-    let sliderIndex = +slider.style.getPropertyValue('--slider-index');
-    const leftHandle = document.querySelector('.left-handle');
-    const cards = slider.querySelectorAll('.carousel-card').length + 1;
 
     if (handle.classList.contains('left-handle')) {
       //MOVE SLIDER TO THE LEFT//
