@@ -19,6 +19,7 @@
   display: flex;
   gap: 14.4rem;
   margin-bottom: 10.7rem;
+ 
 }
 
 .section-hero--content {
@@ -564,7 +565,6 @@
   left: 22%;
   margin-right: 5.6rem;
   overflow: hidden;
-
 }
 
 .footer-spot--green {
@@ -605,7 +605,6 @@
 
 .footer-image {
   width: 275px;
-  
 }
 
 .footer-logo {
@@ -635,7 +634,7 @@
 }
 .btn-menu {
   background: none;
-  background-image: url(../assets/images/Vector.svg);
+  background-image: url(../assets/images/menu_btn_white.webp);
   background-size: 100%;
   display: flex;
   justify-content: center;
@@ -673,6 +672,7 @@
   -webkit-transition: 0.3s ease-in-out;
   /* -webkit-transition: -webkit-transform 0.3s; */
   z-index: 999999;
+  overflow-y: hidden;
 }
 
 .nav-mobile--header {
