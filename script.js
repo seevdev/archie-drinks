@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
       .getComputedStyle(document.documentElement)
       .getPropertyValue('--cards-per-page');
     if (cardWidth <= 265) {
-      console.log('<=265');
       cardsPerPage = cardsPerPage - 1;
       document.documentElement.style.setProperty(
         '--cards-per-page',
