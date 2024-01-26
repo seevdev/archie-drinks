@@ -88,15 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
     cardWidth = Number(
       getComputedStyle(card).width.split('').slice(0, -2).join('')
     );
+    if (cardsPerPage === 1) {
+      card.style.minWidth = 'none';
+      card.style.maxWidth = '257px';
+    }
 
-    if (cardWidth < 257) {
+    if (cardsPerPage > 1 && cardWidth < 257) {
       cardsPerPage = cardsPerPage - 1;
+      console.log(Math.trunc(window.innerWidth / cardsPerPage));
       document.documentElement.style.setProperty(
         '--cards-per-page',
         cardsPerPage
       );
     }
-    if (cardWidth >= 257) {
+    if (cardsPerPage >= 1 && cardWidth >= 375) {
       console.log(cardsPerPage);
       cardsPerPage = cardsPerPage + 1;
       document.documentElement.style.setProperty(
