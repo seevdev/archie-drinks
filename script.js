@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
       //RETURN SLIDER TO THE FIRST ITEM
 
       if (
-        (sliderIndex > 0 && sliderIndex > Math.floor(cards / cardsPerPage)) ||
-        (sliderIndex > 0 && sliderIndex === Math.floor(cards / cardsPerPage))
+        (sliderIndex > 0 && sliderIndex >= Math.trunc(cards / cardsPerPage)) ||
+        (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
       ) {
         slider.style.setProperty('--slider-index', 0);
         leftHandle.classList.add('hidden');
