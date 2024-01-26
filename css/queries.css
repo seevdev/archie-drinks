@@ -517,11 +517,11 @@
   }
 }
 @media (width<=390px) {
-  .carousel-card {
+  /* .carousel-card {
     flex: 0 0 250px;
     height: 465px;
   }
   .carousel-card--image {
     width: 50%;
-  }
+  } */
 }

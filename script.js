@@ -1,5 +1,9 @@
 // SITE NAVIGATION
 
+document.documentElement.style.setProperty(
+  '--cards-per-page',
+  Math.floor(window.innerWidth / 257)
+);
 document.addEventListener('DOMContentLoaded', function () {
   //SELECTIONS
 
@@ -85,14 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
       getComputedStyle(card).width.split('').slice(0, -2).join('')
     );
 
-    if (cardWidth < 241) {
+    if (cardWidth < 257) {
       cardsPerPage = cardsPerPage - 1;
       document.documentElement.style.setProperty(
         '--cards-per-page',
         cardsPerPage
       );
     }
-    if (cardWidth > 375) {
+    if (cardWidth >= 257) {
       console.log(cardsPerPage);
       cardsPerPage = cardsPerPage + 1;
       document.documentElement.style.setProperty(
@@ -111,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (handle.classList.contains('left-handle')) {
       //MOVE SLIDER TO THE LEFT//
 
-      if (sliderIndex > 0 && sliderIndex <= Math.trunc(cards / cardsPerPage)) {
+      if (sliderIndex > 0 && sliderIndex <= Math.floor(cards / cardsPerPage)) {
         sliderIndex = sliderIndex - 1;
         slider.style.setProperty('--slider-index', sliderIndex);
       }
@@ -124,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
       //RETURN SLIDER TO THE FIRST ITEM
 
       if (
-        (sliderIndex > 0 && sliderIndex > Math.trunc(cards / cardsPerPage)) ||
-        (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
+        (sliderIndex > 0 && sliderIndex > Math.floor(cards / cardsPerPage)) ||
+        (sliderIndex > 0 && sliderIndex === Math.floor(cards / cardsPerPage))
       ) {
         slider.style.setProperty('--slider-index', 0);
         leftHandle.classList.add('hidden');
@@ -133,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // MOVE SLIDER TO THE RIGHT//
 
-      if (sliderIndex >= 0 && sliderIndex < Math.trunc(cards / cardsPerPage)) {
+      if (sliderIndex >= 0 && sliderIndex < Math.floor(cards / cardsPerPage)) {
         sliderIndex = sliderIndex + 1;
         slider.style.setProperty('--slider-index', sliderIndex);
         leftHandle.classList.remove('hidden');

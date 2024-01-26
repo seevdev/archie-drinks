@@ -34,7 +34,7 @@ html {
   --main-font-color: #060606;
   --slider-gap: 1.2rem;
   --slider-padding: 5rem;
-  --cards-per-page: 6;
+  --cards-per-page: 0;
 }
 
 body {
