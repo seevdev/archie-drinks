@@ -73,36 +73,47 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  let cardsPerPage = window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue('--cards-per-page');
+
   let cardWidth;
+
   window.addEventListener('resize', () => {
+    console.log(cardsPerPage);
     cardWidth = Number(
       getComputedStyle(card).width.split('').slice(0, -2).join('')
     );
 
-    // console.log(cardWidth);
-  });
-
-  function onHandleClick(handle) {
-    let sliderIndex = +slider.style.getPropertyValue('--slider-index');
-    const leftHandle = document.querySelector('.left-handle');
-    const cards = slider.querySelectorAll('.carousel-card').length + 1;
-
-    let cardsPerPage = window
-      .getComputedStyle(document.documentElement)
-      .getPropertyValue('--cards-per-page');
-    if (cardWidth <= 265) {
+    if (cardWidth < 241) {
       cardsPerPage = cardsPerPage - 1;
       document.documentElement.style.setProperty(
         '--cards-per-page',
         cardsPerPage
       );
     }
+    if (cardWidth > 375) {
+      console.log(cardsPerPage);
+      cardsPerPage = cardsPerPage + 1;
+      document.documentElement.style.setProperty(
+        '--cards-per-page',
+        cardsPerPage
+      );
+    }
+  });
+
+  function onHandleClick(handle) {
+    let sliderIndex = +slider.style.getPropertyValue('--slider-index');
+    const leftHandle = document.querySelector('.left-handle');
+    const cards = slider.querySelectorAll('.carousel-card').length + 1;
+    console.log(cards);
 
     if (handle.classList.contains('left-handle')) {
       //MOVE SLIDER TO THE LEFT//
 
       if (sliderIndex > 0 && sliderIndex <= Math.trunc(cards / cardsPerPage)) {
-        slider.style.setProperty('--slider-index', --sliderIndex);
+        sliderIndex = sliderIndex - 1;
+        slider.style.setProperty('--slider-index', sliderIndex);
       }
       if (sliderIndex === 0) {
         leftHandle.classList.add('hidden');
@@ -123,23 +134,24 @@ document.addEventListener('DOMContentLoaded', function () {
       // MOVE SLIDER TO THE RIGHT//
 
       if (sliderIndex >= 0 && sliderIndex < Math.trunc(cards / cardsPerPage)) {
-        slider.style.setProperty('--slider-index', ++sliderIndex);
+        sliderIndex = sliderIndex + 1;
+        slider.style.setProperty('--slider-index', sliderIndex);
         leftHandle.classList.remove('hidden');
       }
     }
   }
 
-  function errorMessage(error, node) {
-    // document.querySelector(`${node.closest('div')}`);
-    console.log(node.closest('div span'));
+  // function errorMessage(error, node) {
+  //   // document.querySelector(`${node.closest('div')}`);
+  //   console.log(node.closest('div span'));
 
-    const form = document.querySelector('.section-contact');
-    const errorMessage = document.createElement('span');
-    console.log(errorMessage);
-    errorMessage.innerHTML = error;
-    errorMessage.classList.add('error');
-    node.after(errorMessage);
-  }
+  //   const form = document.querySelector('.section-contact');
+  //   const errorMessage = document.createElement('span');
+  //   console.log(errorMessage);
+  //   errorMessage.innerHTML = error;
+  //   errorMessage.classList.add('error');
+  //   node.after(errorMessage);
+  // }
 
   // CONTACT FORM VALIDATION
 
@@ -180,22 +192,22 @@ document.addEventListener('DOMContentLoaded', function () {
   //   orderBtnHandler();
   // });
 
-  function carouselContentToggle(content) {
-    // add type in TS
-    if (window.innerWidth <= 1050) {
-      [...content].map((info) => {
-        info.classList.add('hidden');
-      });
-    } else {
-      [...content].map((info) => {
-        ``;
-        info.classList.remove('hidden');
-      });
-    }
-  }
-  window.addEventListener('resize', () => {
-    carouselContentToggle(carouselContent);
-  });
+  // function carouselContentToggle(content) {
+  //   // add type in TS
+  //   if (window.innerWidth <= 1050) {
+  //     [...content].map((info) => {
+  //       info.classList.add('hidden');
+  //     });
+  //   } else {
+  //     [...content].map((info) => {
+  //       ``;
+  //       info.classList.remove('hidden');
+  //     });
+  //   }
+  // }
+  // window.addEventListener('resize', () => {
+  //   carouselContentToggle(carouselContent);
+  // });
 
   //  NAV MOBILE
 
