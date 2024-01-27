@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const navMobileList = document.querySelector('.nav-mobile--list');
   const navMobileLinks = document.querySelectorAll('.navlink-mobile');
   const card = document.querySelector('.carousel-card');
+  const cardsAll = document.querySelectorAll('.carousel-card');
   const headerOrderBtn = document.querySelector('.section-hero--order-btn');
 
   // (() => {
@@ -81,33 +82,99 @@ document.addEventListener('DOMContentLoaded', function () {
     .getComputedStyle(document.documentElement)
     .getPropertyValue('--cards-per-page');
 
-  let cardWidth;
-  const cardItems =
-    [...document.querySelectorAll('.carousel-cards')].length + 1;
+  // let cardWidth;
+
+  // const cardItems =
+  //   [...document.querySelectorAll('.carousel-cards')].length + 1;
+
+  // let screenSizeInit = window.innerWidth;
 
   window.addEventListener('resize', () => {
-    console.log('cards per page:', cardsPerPage);
-    cardWidth = Number(
-      getComputedStyle(card).width.split('').slice(0, -2).join('')
-    );
+    let width = window.innerWidth;
+    console.log(width);
+    setParams(width);
+  });
 
-    if (cardsPerPage >= 1 && cardWidth < 257) {
-      cardsPerPage = cardsPerPage - 1;
-      console.log(Math.trunc(window.innerWidth / cardsPerPage));
+  // cardWidth = Number(
+  //   getComputedStyle(card).width.split('').slice(0, -2).join('')
+  // );
+
+  // if (
+  //   cardsPerPage > 1 &&
+  //   cardWidth < 257 &&
+  //   screenSizeInit > screenSizeResized
+  // ) {
+  //   cardsPerPage = cardsPerPage - 1;
+  //   screenSizeInit = screenSizeResized;
+  //   document.documentElement.style.setProperty(
+  //     '--cards-per-page',
+  //     cardsPerPage
+  //   );
+  // }
+
+  // if (cardsPerPage === 1) {
+  //   cardsAll.forEach((card) => {
+
+  //   });
+  //   console.log(card.style.flex);
+  // }
+
+  // if (
+  //   cardsPerPage >= 1 &&
+  //   cardWidth > 257 &&
+  //   screenSizeResized > screenSizeInit
+  // ) {
+  //   console.log(cardsPerPage);
+  //   cardsPerPage = cardsPerPage + 1;
+  //   document.documentElement.style.setProperty(
+  //     '--cards-per-page',
+  //     cardsPerPage
+  //   );
+  // }
+  // });
+
+  function setParams(width) {
+    if (width < 450) {
+      cardsPerPage = 1;
       document.documentElement.style.setProperty(
         '--cards-per-page',
         cardsPerPage
       );
+      cardsAll.forEach((card) => {
+        card.style.flex = '0 0 90vw';
+      });
+    } else {
+      if (width < 551) {
+        cardsPerPage = 2;
+        document.documentElement.style.setProperty(
+          '--cards-per-page',
+          cardsPerPage
+        );
+      } else {
+        if (width < 901) {
+          cardsPerPage = 3;
+          document.documentElement.style.setProperty(
+            '--cards-per-page',
+            cardsPerPage
+          );
+        } else {
+          if (width < 1101) {
+            cardsPerPage = 3;
+            document.documentElement.style.setProperty(
+              '--cards-per-page',
+              cardsPerPage
+            );
+          } else {
+            cardsPerPage = 6;
+            document.documentElement.style.setProperty(
+              '--cards-per-page',
+              cardsPerPage
+            );
+          }
+        }
+      }
     }
-    // if (cardsPerPage >= 1 && cardWidth > 257) {
-    //   console.log(cardsPerPage);
-    //   cardsPerPage = cardsPerPage + 1;
-    //   document.documentElement.style.setProperty(
-    //     '--cards-per-page',
-    //     cardsPerPage
-    //   );
-    // }
-  });
+  }
 
   function onHandleClick(handle) {
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
