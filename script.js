@@ -99,14 +99,14 @@ document.addEventListener('DOMContentLoaded', function () {
         cardsPerPage
       );
     }
-    if (cardsPerPage >= 1 && cardWidth > 257) {
-      console.log(cardsPerPage);
-      cardsPerPage = cardsPerPage + 1;
-      document.documentElement.style.setProperty(
-        '--cards-per-page',
-        cardsPerPage
-      );
-    }
+    // if (cardsPerPage >= 1 && cardWidth > 257) {
+    //   console.log(cardsPerPage);
+    //   cardsPerPage = cardsPerPage + 1;
+    //   document.documentElement.style.setProperty(
+    //     '--cards-per-page',
+    //     cardsPerPage
+    //   );
+    // }
   });
 
   function onHandleClick(handle) {
