@@ -1,9 +1,9 @@
-// SITE NAVIGATION
-
 document.documentElement.style.setProperty(
   '--cards-per-page',
   Math.floor(window.innerWidth / 257)
 );
+// SITE NAVIGATION
+
 document.addEventListener('DOMContentLoaded', function () {
   //SELECTIONS
 
@@ -16,10 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const card = document.querySelector('.carousel-card');
   const cardsAll = document.querySelectorAll('.carousel-card');
   const headerOrderBtn = document.querySelector('.section-hero--order-btn');
-
-  // (() => {
-  //   carouselContentToggle(carouselContent);
-  // })();
+  const orderBtn = document.querySelector('.btn-submit');
+  const orderBtnMobile = document.querySelector('.btn-submit--mobile');
+  const form = document.querySelector('.section-contact');
 
   document.querySelector('.nav-links').addEventListener('click', scrollHandler);
 
@@ -82,56 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .getComputedStyle(document.documentElement)
     .getPropertyValue('--cards-per-page');
 
-  // let cardWidth;
-
-  // const cardItems =
-  //   [...document.querySelectorAll('.carousel-cards')].length + 1;
-
-  // let screenSizeInit = window.innerWidth;
-
   window.addEventListener('resize', () => {
     let width = window.innerWidth;
     console.log(width);
     setParams(width);
   });
-
-  // cardWidth = Number(
-  //   getComputedStyle(card).width.split('').slice(0, -2).join('')
-  // );
-
-  // if (
-  //   cardsPerPage > 1 &&
-  //   cardWidth < 257 &&
-  //   screenSizeInit > screenSizeResized
-  // ) {
-  //   cardsPerPage = cardsPerPage - 1;
-  //   screenSizeInit = screenSizeResized;
-  //   document.documentElement.style.setProperty(
-  //     '--cards-per-page',
-  //     cardsPerPage
-  //   );
-  // }
-
-  // if (cardsPerPage === 1) {
-  //   cardsAll.forEach((card) => {
-
-  //   });
-  //   console.log(card.style.flex);
-  // }
-
-  // if (
-  //   cardsPerPage >= 1 &&
-  //   cardWidth > 257 &&
-  //   screenSizeResized > screenSizeInit
-  // ) {
-  //   console.log(cardsPerPage);
-  //   cardsPerPage = cardsPerPage + 1;
-  //   document.documentElement.style.setProperty(
-  //     '--cards-per-page',
-  //     cardsPerPage
-  //   );
-  // }
-  // });
 
   function setParams(width) {
     if (width < 450) {
@@ -215,73 +169,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // function errorMessage(error, node) {
-  //   // document.querySelector(`${node.closest('div')}`);
-  //   console.log(node.closest('div span'));
-
-  //   const form = document.querySelector('.section-contact');
-  //   const errorMessage = document.createElement('span');
-  //   console.log(errorMessage);
-  //   errorMessage.innerHTML = error;
-  //   errorMessage.classList.add('error');
-  //   node.after(errorMessage);
-  // }
-
   // CONTACT FORM VALIDATION
 
-  // const orderBtn = document.querySelector('.btn-submit');
+  orderBtn.addEventListener('click', orderBtnHandler);
+  orderBtnMobile.addEventListener('click', orderBtnHandler);
 
-  // function orderBtnHandler() {
-  //   let error = '';
-
-  //   // FirstName Validation
-  //   const firstName = document.querySelector('[name="firstName"]');
-  //   console.log(firstName.value);
-
-  //   if (firstName.value.length + 1 < 2 || firstName.value.length + 1 > 15) {
-  //     error = 'Invalid name. Name needs to be at least 2 chars long';
-  //     errorMessage(error, firstName);
-  //   }
-
-  //   //LastName Validation
-  //   const lastName = document.querySelector('[name="lastName"]');
-
-  //   if (lastName.value.length + 1 < 2 || lastName.value.length + 1 > 15) {
-  //     error = 'Invalid last name. Name needs to be at least 2 chars long';
-  //     errorMessage(error, lastName);
-  //   }
-  //   //Email Validation
-  //   const email = document.querySelector('[email="email"]');
-
-  //   if (!email.value.matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
-  //     error = 'Invalid email.';
-  //     errorMessage(error, email);
-  //   }
-
-  //   //Phone Validation
-  //   const phone = document.querySelector('[phone]="phone"');
-  // }
-  // orderBtn.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   orderBtnHandler();
-  // });
-
-  // function carouselContentToggle(content) {
-  //   // add type in TS
-  //   if (window.innerWidth <= 1050) {
-  //     [...content].map((info) => {
-  //       info.classList.add('hidden');
-  //     });
-  //   } else {
-  //     [...content].map((info) => {
-  //       ``;
-  //       info.classList.remove('hidden');
-  //     });
-  //   }
-  // }
-  // window.addEventListener('resize', () => {
-  //   carouselContentToggle(carouselContent);
-  // });
+  function orderBtnHandler(e) {
+    //Empty the fields
+    firstName.value = '';
+    lastName.value = '';
+    email.value = '';
+    phone.value = '';
+  }
 
   //  NAV MOBILE
 

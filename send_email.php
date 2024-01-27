@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $to = "lab@archiedrinks.com"; 
     $subject = "New Contact Form Submission";
-    $message = "First Name: $firstName\nLast Name: $lastName\nEmail: $email";
+    $message = "First Name: $firstName\nLast Name: $lastName\nEmail: $email\nPhone: $phone\n Comment: $comment";
 
     if (mail($to, $subject, $message)) {
         echo "Email sent successfully.";
