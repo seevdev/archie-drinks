@@ -82,18 +82,16 @@ document.addEventListener('DOMContentLoaded', function () {
     .getPropertyValue('--cards-per-page');
 
   let cardWidth;
+  const cardItems =
+    [...document.querySelectorAll('.carousel-cards')].length + 1;
 
   window.addEventListener('resize', () => {
-    console.log(cardsPerPage);
+    console.log('cards per page:', cardsPerPage);
     cardWidth = Number(
       getComputedStyle(card).width.split('').slice(0, -2).join('')
     );
-    if (cardsPerPage === 1) {
-      card.style.minWidth = 'none';
-      card.style.maxWidth = '257px';
-    }
 
-    if (cardsPerPage > 1 && cardWidth < 257) {
+    if (cardsPerPage >= 1 && cardWidth < 257) {
       cardsPerPage = cardsPerPage - 1;
       console.log(Math.trunc(window.innerWidth / cardsPerPage));
       document.documentElement.style.setProperty(
@@ -101,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cardsPerPage
       );
     }
-    if (cardsPerPage >= 1 && cardWidth >= 375) {
+    if (cardsPerPage >= 1 && cardWidth > 257) {
       console.log(cardsPerPage);
       cardsPerPage = cardsPerPage + 1;
       document.documentElement.style.setProperty(
@@ -114,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function onHandleClick(handle) {
     let sliderIndex = +slider.style.getPropertyValue('--slider-index');
     const leftHandle = document.querySelector('.left-handle');
-    const cards = slider.querySelectorAll('.carousel-card').length + 1;
+    const cards = slider.querySelectorAll('.carousel-card').length;
     console.log(cards);
 
     if (handle.classList.contains('left-handle')) {

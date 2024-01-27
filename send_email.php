@@ -1,18 +1,23 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST['firstName'];
-  $name = $_POST['lastName'];
-  $email = $_POST['email'];
+   
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone']
+    $comment = $_POST['comment'];
 
-  $to = [$email];
-  $subject = "New submission from $name";
-  $message = "Name: $name\nEmail: $email";
+    
+    $to = "lab@archiedrinks.com"; 
+    $subject = "New Contact Form Submission";
+    $message = "First Name: $firstName\nLast Name: $lastName\nEmail: $email";
 
-  // Send email
-  mail($to, $subject, $message);
-
-  // Redirect or display a confirmation message
- 
-  exit();
+    if (mail($to, $subject, $message)) {
+        echo "Email sent successfully.";
+    } else {
+        echo "Failed to send email. Please try again later.";
+    }
+} else {
+    echo "Error: Method not allowed.";
 }
 ?>
