@@ -88,45 +88,39 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function setParams(width) {
-    if (width < 450) {
+    if (width < 551) {
       cardsPerPage = 1;
       document.documentElement.style.setProperty(
         '--cards-per-page',
         cardsPerPage
       );
-      cardsAll.forEach((card) => {
-        card.style.flex = '0 0 90vw';
-      });
+    }
+
+    //***** THE PROBLEM IS HERE*****//
+
+    if (width < 780) {
+      console.log('yeaahhhhh 780');
+      console.log(cardsPerPage);
+      cardsPerPage = 2;
+      document.documentElement.style.setProperty(
+        '--cards-per-page',
+        cardsPerPage
+      );
+    }
+    // ________________________________________//
+
+    if (width < 1101) {
+      cardsPerPage = 3;
+      document.documentElement.style.setProperty(
+        '--cards-per-page',
+        cardsPerPage
+      );
     } else {
-      if (width < 551) {
-        cardsPerPage = 2;
-        document.documentElement.style.setProperty(
-          '--cards-per-page',
-          cardsPerPage
-        );
-      } else {
-        if (width < 901) {
-          cardsPerPage = 3;
-          document.documentElement.style.setProperty(
-            '--cards-per-page',
-            cardsPerPage
-          );
-        } else {
-          if (width < 1101) {
-            cardsPerPage = 3;
-            document.documentElement.style.setProperty(
-              '--cards-per-page',
-              cardsPerPage
-            );
-          } else {
-            cardsPerPage = 6;
-            document.documentElement.style.setProperty(
-              '--cards-per-page',
-              cardsPerPage
-            );
-          }
-        }
-      }
+      cardsPerPage = Math.floor(width / 257);
+      document.documentElement.style.setProperty(
+        '--cards-per-page',
+        cardsPerPage
+      );
     }
   }
 
