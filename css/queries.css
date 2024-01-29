@@ -122,7 +122,7 @@
     width: 55%;
   }
   .footer-image {
-    width: 50%;
+    width: 90%;
   }
 
   .btn-submit--background {
@@ -131,9 +131,7 @@
   .btn-submit--text {
     width: 150px;
   }
-  .footer-image {
-    width: 50%;
-  }
+ 
   .footer-logo {
     width: 30%;
   }
@@ -214,7 +212,7 @@
   }
 
   .footer-image {
-    width: 165px;
+    width: 195px;
   }
 
   .footer-description {
@@ -516,4 +514,3 @@
     width: max-content;
   }
 }
-
