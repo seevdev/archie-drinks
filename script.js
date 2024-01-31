@@ -1,7 +1,10 @@
+import { accordion } from './accordion';
+
 document.documentElement.style.setProperty(
   '--cards-per-page',
   Math.floor(window.innerWidth / 257)
 );
+
 // SITE NAVIGATION
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -33,135 +36,121 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
+
   // ACCORDION
 
-  const accordionItems = document.querySelectorAll('.accordion-item');
-
-  accordionItems.forEach((item) => {
-    const header = item.querySelector('.accordion-item--header');
-
-    header.addEventListener('click', function () {
-      item.classList.toggle('open');
-      const description = item.querySelector('.description');
-
-      const icons = item.querySelectorAll('svg');
-
-      if (item.classList.contains('open')) {
-        description.style.height = `${description.scrollHeight}px`;
-        description.style.marginBottom = `2.4rem`;
-        icons.forEach((svg) => {
-          svg.classList.toggle('hidden');
-        });
-      } else {
-        description.style.height = '0px';
-        description.style.marginBottom = `0px`;
-        icons.forEach((svg) => {
-          svg.classList.toggle('hidden');
-        });
-      }
-    });
-  });
+  accordion();
 
   //SLIDER//
 
-  const slider = document.querySelector('.slider');
-  document.addEventListener('click', (e) => {
-    let handle;
-    if (e.target.matches('.handle')) {
-      handle = e.target;
-    } else {
-      handle = e.target.closest('.handle');
+  function slider() {
+    const slider = document.querySelector('.slider');
+    document.addEventListener('click', (e) => {
+      let handle;
+      if (e.target.matches('.handle')) {
+        handle = e.target;
+      } else {
+        handle = e.target.closest('.handle');
+      }
+      if (handle !== null) {
+        onHandleClick(handle);
+      }
+    });
+
+    let cardsPerPage = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue('--cards-per-page');
+
+    window.addEventListener('resize', () => {
+      let width = window.innerWidth;
+      console.log(width);
+      setParams(width);
+    });
+
+    function setParams(width) {
+      if (width < 551) {
+        cardsPerPage = 1;
+        document.documentElement.style.setProperty(
+          '--cards-per-page',
+          cardsPerPage
+        );
+      }
+
+      //***** THE PROBLEM IS HERE*****//
+
+      if (width < 780) {
+        console.log('yeaahhhhh 780');
+        console.log(cardsPerPage);
+        cardsPerPage = 2;
+        document.documentElement.style.setProperty(
+          '--cards-per-page',
+          cardsPerPage
+        );
+      }
+      // ________________________________________//
+
+      if (width < 1101) {
+        cardsPerPage = 3;
+        document.documentElement.style.setProperty(
+          '--cards-per-page',
+          cardsPerPage
+        );
+      } else {
+        cardsPerPage = Math.floor(width / 257);
+        document.documentElement.style.setProperty(
+          '--cards-per-page',
+          cardsPerPage
+        );
+      }
     }
-    if (handle !== null) {
-      onHandleClick(handle);
-    }
-  });
 
-  let cardsPerPage = window
-    .getComputedStyle(document.documentElement)
-    .getPropertyValue('--cards-per-page');
+    function onHandleClick(handle) {
+      let sliderIndex = +slider.style.getPropertyValue('--slider-index');
+      const leftHandle = document.querySelector('.left-handle');
+      const cards = slider.querySelectorAll('.carousel-card').length;
+      console.log(cards);
 
-  window.addEventListener('resize', () => {
-    let width = window.innerWidth;
-    console.log(width);
-    setParams(width);
-  });
+      if (handle.classList.contains('left-handle')) {
+        //MOVE SLIDER TO THE LEFT//
 
-  function setParams(width) {
-    if (width < 551) {
-      cardsPerPage = 1;
-      document.documentElement.style.setProperty(
-        '--cards-per-page',
-        cardsPerPage
-      );
-    }
+        if (
+          sliderIndex > 0 &&
+          sliderIndex <= Math.floor(cards / cardsPerPage)
+        ) {
+          sliderIndex = sliderIndex - 1;
+          slider.style.setProperty('--slider-index', sliderIndex);
+        }
+        if (sliderIndex === 0) {
+          leftHandle.classList.add('hidden');
+        }
+      }
 
-    //***** THE PROBLEM IS HERE*****//
+      if (handle.classList.contains('right-handle')) {
+        //RETURN SLIDER TO THE FIRST ITEM
 
-    if (width < 780) {
-      console.log('yeaahhhhh 780');
-      console.log(cardsPerPage);
-      cardsPerPage = 2;
-      document.documentElement.style.setProperty(
-        '--cards-per-page',
-        cardsPerPage
-      );
-    }
-    // ________________________________________//
+        if (
+          (sliderIndex > 0 &&
+            sliderIndex >= Math.trunc(cards / cardsPerPage)) ||
+          (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
+        ) {
+          slider.style.setProperty('--slider-index', 0);
+          leftHandle.classList.add('hidden');
+        }
 
-    if (width < 1101) {
-      cardsPerPage = 3;
-      document.documentElement.style.setProperty(
-        '--cards-per-page',
-        cardsPerPage
-      );
-    } else {
-      cardsPerPage = Math.floor(width / 257);
-      document.documentElement.style.setProperty(
-        '--cards-per-page',
-        cardsPerPage
-      );
+        // MOVE SLIDER TO THE RIGHT//
+
+        if (
+          sliderIndex >= 0 &&
+          sliderIndex < Math.floor(cards / cardsPerPage)
+        ) {
+          sliderIndex = sliderIndex + 1;
+          slider.style.setProperty('--slider-index', sliderIndex);
+          leftHandle.classList.remove('hidden');
+        }
+      }
     }
   }
-
-  function onHandleClick(handle) {
-    let sliderIndex = +slider.style.getPropertyValue('--slider-index');
-    const leftHandle = document.querySelector('.left-handle');
-    const cards = slider.querySelectorAll('.carousel-card').length;
-    console.log(cards);
-
-    if (handle.classList.contains('left-handle')) {
-      //MOVE SLIDER TO THE LEFT//
-
-      if (sliderIndex > 0 && sliderIndex <= Math.floor(cards / cardsPerPage)) {
-        sliderIndex = sliderIndex - 1;
-        slider.style.setProperty('--slider-index', sliderIndex);
-      }
-      if (sliderIndex === 0) {
-        leftHandle.classList.add('hidden');
-      }
-    }
-
-    if (handle.classList.contains('right-handle')) {
-      //RETURN SLIDER TO THE FIRST ITEM
-
-      if (
-        (sliderIndex > 0 && sliderIndex >= Math.trunc(cards / cardsPerPage)) ||
-        (sliderIndex > 0 && sliderIndex === Math.trunc(cards / cardsPerPage))
-      ) {
-        slider.style.setProperty('--slider-index', 0);
-        leftHandle.classList.add('hidden');
-      }
-
-      // MOVE SLIDER TO THE RIGHT//
-
-      if (sliderIndex >= 0 && sliderIndex < Math.floor(cards / cardsPerPage)) {
-        sliderIndex = sliderIndex + 1;
-        slider.style.setProperty('--slider-index', sliderIndex);
-        leftHandle.classList.remove('hidden');
-      }
-    }
-  }
+  slider();
 
   // CONTACT FORM VALIDATION
 
