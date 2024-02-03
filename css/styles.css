@@ -137,7 +137,8 @@
   stroke: var(--main-font-color);
 }
 
-.section-hero--order-btn {
+.section-hero--order-btn,
+.btn-submit {
   font-size: 1.6rem;
   border: none;
   background: linear-gradient(
@@ -437,15 +438,16 @@
 }
 .contact-form {
   position: relative;
-  display: flex;
-  width: 100%;
+  /* display: flex; */
+  width: 70%;
+  margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 25.6rem;
   flex: 1;
 }
 .contact-form--info {
-  width: 55%;
+  margin-bottom: 4.8rem;
 }
 .contact-form--comment {
   width: 100%;
@@ -493,62 +495,35 @@
   width: 100%;
 }
 
-.btn-submit {
-  position: absolute;
+.side-form_btn {
+  position: fixed;
   background: none;
   border: none;
   cursor: pointer;
-  right: 0;
-  top: 50px;
+  right: 20px;
+  bottom: 10px;
+  z-index: 999999;
 }
 
-.button-images-container {
+.side-form_btn--image-container {
   position: relative;
 }
 
-.btn-submit--background {
-  width: 250px;
+.side-form_btn--background {
+  width: 150px;
 }
 
-.btn-submit-text--container {
+.side-form_btn--text {
   position: absolute;
+  width: 115px;
   top: 12%;
   left: 12%;
-}
-
-.btn-submit--content-leftTop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotate(-45deg);
-}
-.btn-submit--content-rightTop {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: rotate(45deg);
-}
-.btn-submit--content-leftBottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: rotate(-125deg);
-}
-.btn-submit--content-rightBottom {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: rotate(125deg);
-}
-
-.btn-submit--text {
-  width: 185px;
 }
 
 .section-contact--heading {
   font-size: 3rem;
   letter-spacing: 1px;
-  margin-bottom: 4.8rem;
+  margin-bottom: 6.4rem;
 }
 
 .btn-policies:link,
@@ -743,6 +718,28 @@
 
 .nav-mobile_description {
   margin-bottom: 2.4rem;
+}
+
+/* MODAL */
+.modal {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border: 11px;
+  background: #fff;
+  z-index: 9999999999999;
+}
+.modal-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000005c;
+  z-index: 99999999999999999999999;
+}
+.form-modal {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999999999999999999999999999;
 }
 
 /* HELPERS */

@@ -1,5 +1,3 @@
-import { accordion } from './accordion';
-
 document.documentElement.style.setProperty(
   '--cards-per-page',
   Math.floor(window.innerWidth / 257)
@@ -20,8 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const cardsAll = document.querySelectorAll('.carousel-card');
   const headerOrderBtn = document.querySelector('.section-hero--order-btn');
   const orderBtn = document.querySelector('.btn-submit');
+  const sideBtn = document.querySelector('.side-form_btn');
   const orderBtnMobile = document.querySelector('.btn-submit--mobile');
   const form = document.querySelector('.section-contact');
+  const modal = document.querySelector('.modal');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const btnSubmitModal = document.querySelector('.btn-submit_modal');
 
   document.querySelector('.nav-links').addEventListener('click', scrollHandler);
 
@@ -38,6 +40,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ACCORDION
+
+  function accordion() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach((item) => {
+      const header = item.querySelector('.accordion-item--header');
+
+      header.addEventListener('click', function () {
+        item.classList.toggle('open');
+        const description = item.querySelector('.description');
+
+        const icons = item.querySelectorAll('svg');
+
+        if (item.classList.contains('open')) {
+          description.style.height = `${description.scrollHeight}px`;
+          description.style.marginBottom = `2.4rem`;
+          icons.forEach((svg) => {
+            svg.classList.toggle('hidden');
+          });
+        } else {
+          description.style.height = '0px';
+          description.style.marginBottom = `0px`;
+          icons.forEach((svg) => {
+            svg.classList.toggle('hidden');
+          });
+        }
+      });
+    });
+  }
 
   accordion();
 
@@ -152,10 +183,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   slider();
 
+  // MODAL FORM
+
+  sideBtn.addEventListener('click', openModal);
+  modalOverlay.addEventListener('click', closeModal);
+  btnSubmitModal.addEventListener('click', btnSubmitModalHandler);
+
+  function openModal() {
+    modal.classList.remove('hidden');
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+  }
+  function btnSubmitModalHandler() {
+    orderBtnHandler();
+    closeModal();
+  }
+
   // CONTACT FORM VALIDATION
 
   orderBtn.addEventListener('click', orderBtnHandler);
-  orderBtnMobile.addEventListener('click', orderBtnHandler);
 
   function orderBtnHandler(e) {
     //Empty the fields
@@ -167,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //  NAV MOBILE
 
-  //EVENT LISTENERS
   btnNavMobile.addEventListener('click', btnNavMobileHandler);
   btnMenu.addEventListener('click', btnMenuHandler);
   navMobileList.addEventListener('click', navMobileListHandler);

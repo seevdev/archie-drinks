@@ -16,6 +16,83 @@
     <title>Archie Drinks</title>
   </head>
   <body>
+    <div class="modal hidden">
+      <div class="modal-overlay">
+        <form class="contact-form form-modal" action="send_email.php" method="POST">
+          <div class="contact-form--info">
+            <div class="inputs-container">
+              <div class="form-divider">
+                <input
+                  class="input"
+                  type="text"
+                  name="firstName"
+                  placeholder="Имя*"
+                  required
+                />
+
+                <input
+                  class="input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон*"
+                  required
+                />
+              </div>
+
+              <div class="form-divider">
+                <input
+                  class="input"
+                  type="text"
+                  name="lastName"
+                  placeholder="Фамилия*"
+                  required
+                />
+
+                <input
+                  class="input"
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  required
+                />
+              </div>
+            </div>
+            <label for="form-comment" class="form-comment--label"
+              >Опишите напиток, который бы хотели разработать?</label
+            >
+            <div
+              name="comment"
+              id="form-comment"
+              class="contact-form--comment"
+              role="textbox"
+              contenteditable="true"
+              aria-multiline="true"
+              aria-labelledby="txtboxMultilineLabel"
+              aria-required="true"
+            ></div>
+            <div class="confidential-policies">
+              <input type="checkbox" name="policies" required />
+              <span class="label-policies"
+                >Я согласен с
+                <a target="_blank" href="/privacy.html" class="btn btn-policies"
+                  >политикой конфиденциальности
+                </a>
+                и
+                <a
+                  href="/agreement.html"
+                  target="_blank"
+                  class="btn btn-agreement"
+                >
+                  пользовательским соглашением
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <button class="btn-submit btn-submit_modal">Заказать рецептуру</button>
+        </form>
+      </div>
+    </div>
     <header class="header-main">
       <nav class="nav">
         <ul class="nav-links">
@@ -889,7 +966,7 @@
             Форма заказа
           </h3>
 
-          <form class="contact-form" method="POST">
+          <form class="contact-form" action="send_email.php" method="POST">
             <div class="contact-form--info">
               <div class="inputs-container">
                 <div class="form-divider">
@@ -962,26 +1039,8 @@
                 </span>
               </div>
             </div>
-            <button type="submit" class="btn-submit">
-              <div class="button-images-container">
-                <div class="btn-submit--background">
-                  <img
-                    class="btn-submit--background"
-                    src="assets/images/order_btn_background.svg"
-                    alt="order button"
-                  />
-                </div>
-                <div class="btn-submit-text--container">
-                  <img
-                    class="btn-submit--text"
-                    src="assets/images/order_btn-text.svg"
-                  />
-                </div>
-              </div>
-            </button>
-            <button class="section-hero--order-btn btn-submit--mobile">
-              Заказать рецептуру
-            </button>
+
+            <button class="btn-submit">Заказать рецептуру</button>
           </form>
         </section>
       </div>
@@ -1012,5 +1071,21 @@
         <span class="preserved">&copy 2023 ArchieDrinks</span>
       </div>
     </footer>
+    <button class="side-form_btn">
+      <div class="side-form_btn--image-container">
+        <div class="side-form_btn--background">
+          <img
+            class="side-form_btn--background"
+            src="assets/images/order_btn_background.svg"
+            alt="order button"
+          />
+        </div>
+
+        <img
+          class="side-form_btn--text"
+          src="assets/images/order_btn-text.svg"
+        />
+      </div>
+    </button>
   </body>
 </html>
