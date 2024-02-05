@@ -131,11 +131,11 @@
   .btn-submit--text {
     width: 150px;
   }
- 
+
   .footer-logo {
     width: 30%;
   }
-  .form-modal{
+  .form-modal {
     flex-direction: column;
   }
 }

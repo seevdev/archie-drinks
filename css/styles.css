@@ -510,12 +510,12 @@
 }
 
 .side-form_btn--background {
-  width: 150px;
+  width: 95px;
 }
 
 .side-form_btn--text {
   position: absolute;
-  width: 115px;
+  width: 72px;
   top: 12%;
   left: 12%;
 }
