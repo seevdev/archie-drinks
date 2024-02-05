@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.querySelector('.modal');
   const modalOverlay = document.querySelector('.modal-overlay');
   const btnSubmitModal = document.querySelector('.btn-submit_modal');
+  const btnClose = document.querySelector('.btn-close');
 
   document.querySelector('.nav-links').addEventListener('click', scrollHandler);
 
@@ -187,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sideBtn.addEventListener('click', openModal);
   modalOverlay.addEventListener('click', closeModal);
+  btnClose.addEventListener('click', closeModal);
   btnSubmitModal.addEventListener('click', btnSubmitModalHandler);
 
   function openModal() {

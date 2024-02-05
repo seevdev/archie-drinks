@@ -135,6 +135,9 @@
   .footer-logo {
     width: 30%;
   }
+  .form-modal{
+    flex-direction: column;
+  }
 }
 
 @media (width<=1050px) {

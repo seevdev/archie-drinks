@@ -17,81 +17,101 @@
   </head>
   <body>
     <div class="modal hidden">
-      <div class="modal-overlay">
-        <form class="contact-form form-modal" action="send_email.php" method="POST">
-          <div class="contact-form--info">
-            <div class="inputs-container">
-              <div class="form-divider">
-                <input
-                  class="input"
-                  type="text"
-                  name="firstName"
-                  placeholder="Имя*"
-                  required
-                />
+      <div class="modal-overlay"></div>
+      <form
+        class="contact-form form-modal"
+        action="send_email.php"
+        method="POST"
+      >
+      <div class="modal-heading">Форма заказа</div>
+        <div class="btn-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="btn-close_icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <div class="contact-form--info">
+          <div class="inputs-container">
+            <div class="form-divider">
+              <input
+                class="input"
+                type="text"
+                name="firstName"
+                placeholder="Имя*"
+                required
+              />
 
-                <input
-                  class="input"
-                  type="tel"
-                  name="phone"
-                  placeholder="Телефон*"
-                  required
-                />
-              </div>
-
-              <div class="form-divider">
-                <input
-                  class="input"
-                  type="text"
-                  name="lastName"
-                  placeholder="Фамилия*"
-                  required
-                />
-
-                <input
-                  class="input"
-                  type="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                />
-              </div>
+              <input
+                class="input"
+                type="tel"
+                name="phone"
+                placeholder="Телефон*"
+                required
+              />
             </div>
-            <label for="form-comment" class="form-comment--label"
-              >Опишите напиток, который бы хотели разработать?</label
-            >
-            <div
-              name="comment"
-              id="form-comment"
-              class="contact-form--comment"
-              role="textbox"
-              contenteditable="true"
-              aria-multiline="true"
-              aria-labelledby="txtboxMultilineLabel"
-              aria-required="true"
-            ></div>
-            <div class="confidential-policies">
-              <input type="checkbox" name="policies" required />
-              <span class="label-policies"
-                >Я согласен с
-                <a target="_blank" href="/privacy.html" class="btn btn-policies"
-                  >политикой конфиденциальности
-                </a>
-                и
-                <a
-                  href="/agreement.html"
-                  target="_blank"
-                  class="btn btn-agreement"
-                >
-                  пользовательским соглашением
-                </a>
-              </span>
+
+            <div class="form-divider">
+              <input
+                class="input"
+                type="text"
+                name="lastName"
+                placeholder="Фамилия*"
+                required
+              />
+
+              <input
+                class="input"
+                type="email"
+                name="email"
+                placeholder="Email*"
+                required
+              />
             </div>
           </div>
+          <label for="form-comment" class="form-comment--label"
+            >Опишите напиток, который бы хотели разработать?</label
+          >
+          <div
+            name="comment"
+            id="form-comment"
+            class="contact-form--comment"
+            role="textbox"
+            contenteditable="true"
+            aria-multiline="true"
+            aria-labelledby="txtboxMultilineLabel"
+            aria-required="true"
+          ></div>
+          <div class="confidential-policies">
+            <input type="checkbox" name="policies" required />
+            <span class="label-policies"
+              >Я согласен с
+              <a target="_blank" href="/privacy.html" class="btn btn-policies"
+                >политикой конфиденциальности
+              </a>
+              и
+              <a
+                href="/agreement.html"
+                target="_blank"
+                class="btn btn-agreement"
+              >
+                пользовательским соглашением
+              </a>
+            </span>
+          </div>
+        </div>
 
-          <button class="btn-submit btn-submit_modal">Заказать рецептуру</button>
-        </form>
-      </div>
+        <button class="btn-submit btn-submit_modal">Заказать рецептуру</button>
+      </form>
     </div>
     <header class="header-main">
       <nav class="nav">
