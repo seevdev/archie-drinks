@@ -136,7 +136,7 @@
     width: 30%;
   }
   .form-modal {
-    flex-direction: column;
+    display: block;
   }
 }
 

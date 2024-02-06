@@ -438,11 +438,9 @@
 }
 .contact-form {
   position: relative;
-  /* display: flex; */
   width: 70%;
   margin: 0 auto;
   align-items: center;
-  /* justify-content: space-between; */
   margin-bottom: 25.6rem;
   flex: 1;
 }
@@ -741,6 +739,7 @@
   z-index: 9999;
   border-radius: 11px;
   padding: 9.6rem;
+  margin: 0 auto;
 }
 .btn-close {
   position: absolute;
