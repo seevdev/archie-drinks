@@ -519,14 +519,11 @@
 }
 
 .side-btn_animation {
-  right: 0;
-  bottom: 30px;
   position: absolute;
   width: 105px;
   height: 105px;
   border-radius: 50%;
-  border-style: solid;
-  border-width: 3px;
+  border:solid 2px #01574d;
   animation-name: shadow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -824,17 +821,17 @@
 
 @keyframes shadow {
   0% {
-    top: 0px;
-    left: 0px;
-    width: 56px;
-    height: 56px;
+    top: -5px;
+    left: -5px;
+    width: 105px;
+    height: 105px;
     opacity: 0.5;
   }
   100% {
     top: -17px;
     left: -17px;
-    width: 96px;
-    height: 96px;
+    width: 130px;
+    height: 130px;
     opacity: 0;
   }
 }
