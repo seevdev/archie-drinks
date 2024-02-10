@@ -523,7 +523,7 @@
   width: 105px;
   height: 105px;
   border-radius: 50%;
-  border:solid 2px #01574d;
+  border: solid 2px #01574d;
   animation-name: shadow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -551,7 +551,7 @@
   width: 100%;
   height: 35vh;
   background: #212121;
-  z-index: -1;
+  z-index: 1;
   min-height: 25vh;
   padding: 2.4rem 30% 0 0;
 }
@@ -616,6 +616,30 @@
 }
 .preserved {
   font-size: 1.2rem;
+}
+.contact-us {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.link-email_container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.link-email:link,
+.link-email:visited {
+  color: #fff;
+  cursor: pointer;
+}
+.link-email_icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
 }
 
 /* MOBILE */
