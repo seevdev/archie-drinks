@@ -60,3 +60,10 @@ a:active {
   text-decoration: none;
   color: #060606;
 }
+
+.section-hero--content{
+  overflow: hidden;
+}
+nav{
+  overflow: hidden;
+}

@@ -17,97 +17,100 @@
   </head>
   <body>
     <div class="modal hidden">
-      <div class="modal-overlay"></div>
-      <form class="form-modal" action="send_email.php" method="POST">
-        <div class="modal-heading">Форма заказа</div>
-        <div class="btn-close">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="btn-close_icon"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
-        </div>
-        <div class="contact-form--info">
-          <div class="inputs-container">
-            <div class="form-divider">
-              <input
-                class="input"
-                type="text"
-                name="firstName"
-                placeholder="Имя*"
-                required
+      <div class="modal-overlay">
+        <form class="form-modal" action="send_email.php" method="POST">
+          <div class="modal-heading">Форма заказа</div>
+          <div class="btn-close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="btn-close_icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
               />
+            </svg>
+          </div>
+          <div class="modal-contact-form--info">
+            <div class="modal-inputs-container">
+              <div class="modal-form-divider">
+                <input
+                  class="input"
+                  type="text"
+                  name="firstName"
+                  placeholder="Имя*"
+                  required
+                />
 
-              <input
-                class="input"
-                type="tel"
-                name="phone"
-                placeholder="Телефон*"
-                required
-              />
+                <input
+                  class="input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон*"
+                  required
+                />
+              </div>
+
+              <div class="modal-form-divider">
+                <input
+                  class="input"
+                  type="text"
+                  name="lastName"
+                  placeholder="Фамилия*"
+                  required
+                />
+
+                <input
+                  class="input"
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  required
+                />
+              </div>
             </div>
-
-            <div class="form-divider">
-              <input
-                class="input"
-                type="text"
-                name="lastName"
-                placeholder="Фамилия*"
-                required
-              />
-
-              <input
-                class="input"
-                type="email"
-                name="email"
-                placeholder="Email*"
-                required
-              />
+            <label for="modal-form-comment" class="modal-form-comment_label"
+              >Опишите напиток, который бы хотели разработать?</label
+            >
+            <div
+              name="comment"
+              id="modal-form-comment"
+              class="modal-contact-form--comment"
+              role="textbox"
+              contenteditable="true"
+              aria-multiline="true"
+              aria-labelledby="txtboxMultilineLabel"
+              aria-required="true"
+            ></div>
+            <div class="modal-confidential-policies">
+              <input type="checkbox" name="policies" required />
+              <span class="modal-confidential-policies"
+                >Я согласен с
+                <a target="_blank" href="/privacy.html" class="btn btn-policies"
+                  >политикой конфиденциальности
+                </a>
+                и
+                <a
+                  href="/agreement.html"
+                  target="_blank"
+                  class="btn btn-agreement"
+                >
+                  пользовательским соглашением
+                </a>
+              </span>
             </div>
           </div>
-          <label for="form-comment" class="form-comment--label"
-            >Опишите напиток, который бы хотели разработать?</label
-          >
-          <div
-            name="comment"
-            id="form-comment"
-            class="contact-form--comment"
-            role="textbox"
-            contenteditable="true"
-            aria-multiline="true"
-            aria-labelledby="txtboxMultilineLabel"
-            aria-required="true"
-          ></div>
-          <div class="confidential-policies">
-            <input type="checkbox" name="policies" required />
-            <span class="label-policies"
-              >Я согласен с
-              <a target="_blank" href="/privacy.html" class="btn btn-policies"
-                >политикой конфиденциальности
-              </a>
-              и
-              <a
-                href="/agreement.html"
-                target="_blank"
-                class="btn btn-agreement"
-              >
-                пользовательским соглашением
-              </a>
-            </span>
-          </div>
-        </div>
 
-        <button class="btn-submit btn-submit_modal">Заказать рецептуру</button>
-      </form>
+          <button class="btn-submit btn-submit_modal">
+            Заказать рецептуру
+          </button>
+        </form>
+      </div>
     </div>
     <header class="header-main">
       <nav class="nav">
@@ -123,7 +126,7 @@
           <div>
             <img
               class="nav-mobile--logo"
-              src="./assets/images/archie_drinks_logo_black.svg"
+              src="./assets/images/archie_drinks_logo_white.svg"
               alt="Logo"
             />
           </div>
@@ -277,7 +280,7 @@
                   />
                 </svg>
 
-                <span>Грамотный подбор нутриентов</span>
+                <span>Научный подбор нутриентов</span>
               </li>
               <li class="sectio-hero--list-item">
                 <svg
@@ -295,7 +298,7 @@
                   />
                 </svg>
 
-                <span>СТМ под ключ</span>
+                <span>Масштабирование и розлив</span>
               </li>
             </ul>
             <button class="section-hero--order-btn nav_link" href="#section--5">
@@ -319,7 +322,7 @@
           <div class="section-about--portraitContainer">
             <img
               class="section-about--portrait"
-              src="assets/images/ceo-portrait.webp"
+              src="assets/images/Archi_01 1.webp"
               alt="portrait"
             />
           </div>
@@ -584,10 +587,9 @@
               </header>
 
               <p class="description">
-                СТМ. Если у вас нет своего предприятия, но вы хотите
-                масштабировать разработанный напиток на контрактном
-                производстве, то с удовольствием предоставлю такую опцию под
-                ключ у моего партнера компании Space Company
+                Если у вас нет своего предприятия, но вы хотите масштабировать
+                разработанный напиток на контрактном производстве, то с
+                удовольствием предоставлю такую опцию под ключ у своих партнеров
               </p>
             </div>
           </div>
@@ -663,13 +665,13 @@
             <div class="production-stages">
               <span class="production-stages--number">07</span>
               <span class="production-stages--heading"
-                >Партия напитка СТМ под ключ</span
+                >Розлив напитка на предприятии</span
               >
               <p class="production-stages--content">
-                Заказчики, которые не имеют собственного производства для
-                реализации разработанной рецептуры напитка. В таких случаях есть
-                опция масштабирования у моего партнера компании Space Company,
-                первичную коммуникацию с которым я беру на себя
+                Для заказчиков, которые не имеют собственного производства для
+                реализации разработанной рецептуры напитка, я с порекомендую
+                подходящее дружественное производство и настрою первичную
+                коммуникацию.
               </p>
             </div>
           </div>

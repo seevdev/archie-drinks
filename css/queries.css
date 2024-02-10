@@ -136,7 +136,16 @@
     width: 30%;
   }
   .form-modal {
-    display: block;
+    padding: 7.2rem;
+    width: 60%;
+  }
+  .modal-form-divider {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  .btn-submit_modal {
+    width: 100%;
   }
 }
 
@@ -231,6 +240,9 @@
   }
   .section-contact--heading {
     font-size: 2rem;
+  }
+  .form-modal{
+    width: 75%;
   }
 }
 
@@ -352,6 +364,11 @@
   .footer-spot--green,
   .side-form_btn--image-container {
     display: none;
+  }
+
+  .form-modal{
+    width: 90%;
+    height: 60%;
   }
 }
 
@@ -518,5 +535,8 @@
   .slider {
     gap: 1.3rem;
     width: max-content;
+  }
+  .nav-mobile--logo{
+    width: 125px;
   }
 }
