@@ -241,7 +241,7 @@
   .section-contact--heading {
     font-size: 2rem;
   }
-  .form-modal{
+  .form-modal {
     width: 75%;
   }
 }
@@ -366,7 +366,7 @@
     display: none;
   }
 
-  .form-modal{
+  .form-modal {
     width: 90%;
     height: 60%;
   }
@@ -532,11 +532,7 @@
     padding-bottom: 9.6rem;
   }
 
-  .slider {
-    gap: 1.3rem;
-    width: max-content;
-  }
-  .nav-mobile--logo{
+  .nav-mobile--logo {
     width: 125px;
   }
 }

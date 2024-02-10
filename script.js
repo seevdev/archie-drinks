@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function setParams(width) {
-      if (width < 551) {
+      if (width <= 551) {
         cardsPerPage = 1;
         document.documentElement.style.setProperty(
           '--cards-per-page',
@@ -108,31 +108,35 @@ document.addEventListener('DOMContentLoaded', function () {
         );
       }
 
-      //***** THE PROBLEM IS HERE*****//
+     
 
-      if (width < 780) {
+      if (width <= 780 && width > 551) {
         console.log('yeaahhhhh 780');
-        console.log(cardsPerPage);
         cardsPerPage = 2;
         document.documentElement.style.setProperty(
           '--cards-per-page',
           cardsPerPage
         );
+        console.log('cardsPerPage:' + cardsPerPage);
       }
       // ________________________________________//
 
-      if (width < 1101) {
+      if (width <= 1101 && width > 780) {
         cardsPerPage = 3;
+
         document.documentElement.style.setProperty(
           '--cards-per-page',
           cardsPerPage
         );
-      } else {
+        console.log('cardsPerPage:' + cardsPerPage);
+      }
+      if (width > 1101) {
         cardsPerPage = Math.floor(width / 257);
         document.documentElement.style.setProperty(
           '--cards-per-page',
           cardsPerPage
         );
+        console.log('cardsPerPage:' + cardsPerPage);
       }
     }
 
