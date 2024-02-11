@@ -17,101 +17,99 @@
   </head>
   <body>
     <div class="modal hidden">
-      <div class="modal-overlay">
-        <form class="form-modal" action="send_email.php" method="POST">
-          <div class="modal-heading">Форма заказа</div>
-          <div class="btn-close">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="btn-close_icon"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
+      <div class="modal-overlay"></div>
+      <form class="form-modal" action="send_email.php" method="POST">
+        <div class="modal-heading">Форма заказа</div>
+        <div class="btn-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="btn-close_icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <div class="modal-contact-form--info">
+          <div class="modal-inputs-container">
+            <div class="modal-form-divider">
+              <input
+                class="input"
+                type="text"
+                name="firstName"
+                placeholder="Имя*"
+                required
               />
-            </svg>
-          </div>
-          <div class="modal-contact-form--info">
-            <div class="modal-inputs-container">
-              <div class="modal-form-divider">
-                <input
-                  class="input"
-                  type="text"
-                  name="firstName"
-                  placeholder="Имя*"
-                  required
-                />
 
-                <input
-                  class="input"
-                  type="tel"
-                  name="phone"
-                  placeholder="Телефон*"
-                  required
-                />
-              </div>
-
-              <div class="modal-form-divider">
-                <input
-                  class="input"
-                  type="text"
-                  name="lastName"
-                  placeholder="Фамилия*"
-                  required
-                />
-
-                <input
-                  class="input"
-                  type="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                />
-              </div>
+              <input
+                class="input"
+                type="tel"
+                name="phone"
+                placeholder="Телефон*"
+                required
+              />
             </div>
-            <label for="modal-form-comment" class="modal-form-comment_label"
-              >Опишите напиток, который бы хотели разработать?</label
-            >
-            <div
-              name="comment"
-              id="modal-form-comment"
-              class="modal-contact-form--comment"
-              role="textbox"
-              contenteditable="true"
-              aria-multiline="true"
-              aria-labelledby="txtboxMultilineLabel"
-              aria-required="true"
-            ></div>
-            <div class="modal-confidential-policies">
-              <input type="checkbox" name="policies" required />
-              <span class="modal-confidential-policies"
-                >Я согласен с
-                <a target="_blank" href="/privacy.html" class="btn btn-policies"
-                  >политикой конфиденциальности
-                </a>
-                и
-                <a
-                  href="/agreement.html"
-                  target="_blank"
-                  class="btn btn-agreement"
-                >
-                  пользовательским соглашением
-                </a>
-              </span>
+
+            <div class="modal-form-divider">
+              <input
+                class="input"
+                type="text"
+                name="lastName"
+                placeholder="Фамилия*"
+                required
+              />
+
+              <input
+                class="input"
+                type="email"
+                name="email"
+                placeholder="Email*"
+                required
+              />
             </div>
           </div>
+          <label for="modal-form-comment" class="modal-form-comment_label"
+            >Опишите напиток, который бы хотели разработать?</label
+          >
+          <div
+            name="comment"
+            id="modal-form-comment"
+            class="modal-contact-form--comment"
+            role="textbox"
+            contenteditable="true"
+            aria-multiline="true"
+            aria-labelledby="txtboxMultilineLabel"
+            aria-required="true"
+          ></div>
+          <div class="modal-confidential-policies">
+            <input type="checkbox" name="policies" required />
+            <span class="modal-policies"
+              >Я согласен с
+              <a target="_blank" href="/privacy.html" class="btn btn-policies"
+                >политикой конфиденциальности
+              </a>
+              и
+              <a
+                href="/agreement.html"
+                target="_blank"
+                class="btn btn-agreement"
+              >
+                пользовательским соглашением
+              </a>
+            </span>
+          </div>
+        </div>
 
-          <button class="btn-submit btn-submit_modal">
-            Заказать рецептуру
-          </button>
-        </form>
-      </div>
+        <button class="btn-submit_modal">Заказать рецептуру</button>
+      </form>
     </div>
+
     <header class="header-main">
       <nav class="nav">
         <ul class="nav-links">
