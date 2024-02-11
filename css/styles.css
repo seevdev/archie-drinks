@@ -745,7 +745,7 @@
   background-color: #fff;
   border-radius: 11px;
   padding: 9.6rem;
-  z-index: 99999999;
+  z-index: 99999999999999;
   transition: opacity 0.15s linear;
 }
 
@@ -767,6 +767,16 @@
   display: flex;
   gap: 4.8rem;
   width: 100%;
+}
+.modal-input {
+  position: relative;
+  margin-bottom: 1.2rem;
+  background-color: transparent;
+  padding: 0.8rem 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  flex-shrink: 0;
+  flex-grow: 1;
 }
 
 .modal-inputs-container {

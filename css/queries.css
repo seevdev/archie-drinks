@@ -147,7 +147,6 @@
   .btn-submit_modal {
     width: 100%;
   }
-  
 }
 
 @media (width<=1050px) {
@@ -369,6 +368,40 @@
   .form-modal {
     width: 90%;
     height: 60%;
+  }
+
+  .modal-input {
+    padding: 0.2rem 0;
+    font-size: 1rem;
+  }
+  .modal-inputs-container {
+    margin-bottom: 0rem;
+  }
+  .modal-contact-form--comment {
+    margin-bottom: 1.2rem;
+    max-height: 200px;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
+  .btn-submit_modal {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  .modal-form-comment_label {
+    font-size: 0.8rem;
+  }
+
+  .modal-policies {
+    font-size: 0.8rem;
+  }
+  .btn-policies {
+    font-size: 0.8rem;
+  }
+  .btn-agreement {
+    font-size: 0.8rem;
+  }
+  .modal-contact-form--info {
+    margin-bottom: 1.2rem;
   }
 }
 
