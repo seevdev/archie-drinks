@@ -602,7 +602,8 @@
   height: 24px;
   color: #fff;
 }
-.whatsapp-icon {
+.whatsapp-icon,
+.telegram-icon {
   width: 24px;
   height: 24px;
 }
