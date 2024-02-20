@@ -1,63 +1,38 @@
 <?php
+
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
     
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     // Retrieve form data
-     if (isset($_POST['firstName'])) {
-        $firstName = $_POST['firstName'];
-        // Process the first name
-    }else {
-        // Handle the case when 'firstName' key is not set
-        $firstName = "Undefined"; // Default value or appropriate error handling
-    }
-    if (isset($_POST['firstName'])) {
-        $lastName = $_POST['lastName'];
-        // Process the first name
-    }else {
-        // Handle the case when 'firstName' key is not set
-        $lastName = "Undefined"; // Default value or appropriate error handling
-    }
+ini_set('extension', 'openssl');
 
-  if(isset($_POST['email'])){
-    $email = $_POST['email'];
-  }else{
-    $email = 'Undefined';
-  };
+// Create a new PHPMailer instance
+$mail = new PHPMailer\PHPMailer\PHPMailer();
 
-  if(isset($_POST['phone'])){
-    $phone = $_POST['phone'];
-  }else{
-    $phone = 'Undefined';
-  };
+// SMTP configuration
+$mail->isSMTP();
+$mail->Host = 'mail.archiedrinks.com'; // Your SMTP server address
+$mail->SMTPAuth = true;
+$mail->Username = 'lab@archiedrinks.com'; // Your SMTP username
+// $mail->Password = ''; // Your SMTP password
+$mail->SMTPSecure = 'tls'; // Enable TLS encryption
+$mail->Port = 465; // TCP port to connect to
 
+// Sender and recipient settings
+$mail->setFrom('lab@archiedrinks.com', 'Your Name');
+$mail->addAddress('lab@archiedrinks.com', 'Recipient Name');
 
-  if(isset($_POST['comment'])){
-    $comment = $_POST['comment'];
-  }else{
-    $comment = 'Undefined';
-  };
+// Email content
+$mail->isHTML(false); // Set email format to plain text
+$mail->Subject = 'Subject of your email';
+$mail->Body    = 'Body of your email';
 
-
-        // Process the data (for demonstration, just printing here)
-        echo "Fitst Name: $firstName <br>";
-        echo "Last Name: $lastName <br>";
-        echo "Email: $email <br>";
-        echo "Phone: $phone <br>";
-        echo "Comment: $comment <br>";
-        
-
-    // }
+// Send email
+if(!$mail->send()) {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message sent successfully!';
+}
     
-    // $to = "seev.dev@gmail.com"; 
-    // $subject = "New Contact Form Submission";
-    // $message = "First Name: $firstName\nLast Name: $lastName\nEmail: $email\nPhone: $phone\n Comment: $comment";
-
-    // if (mail($to, $subject, $message)) {
-    //     echo "Email sent successfully.";
-    // } else {
-    //     echo "Failed to send email. Please try again later.";
-    // }
-
-    
-
 ?>
 

@@ -108,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
         );
       }
 
-     
-
       if (width <= 780 && width > 551) {
         console.log('yeaahhhhh 780');
         cardsPerPage = 2;
@@ -210,12 +208,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
   orderBtn.addEventListener('click', orderBtnHandler);
 
+  // async function sendForm(url, formData = {}) {
+  //   try {
+
+  //     const response = await fetch(url, {
+  //       method: 'POST',
+  //       body: formData,
+  //       mode: 'no-cors',
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Fetch new data');
+  //     }
+
+  //     const responseData = await response.json();
+  //     console.log(responseData);
+  //     // return responseData;
+  //   } catch (error) {
+  //     console.error('Error:', error.message);
+
+  //     throw error;
+  //   }
+  // }
+
   function orderBtnHandler(e) {
+    e.preventDefault();
+    
+
+
     //Empty the fields
-    firstName.value = '';
-    lastName.value = '';
-    email.value = '';
-    phone.value = '';
+    // firstName.value = '';
+    // lastName.value = '';
+    // email.value = '';
+    // phone.value = '';
   }
 
   //  NAV MOBILE

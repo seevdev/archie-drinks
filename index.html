@@ -988,6 +988,7 @@
                 <div class="form-divider">
                   <input
                     class="input"
+                    id="firstName"
                     type="text"
                     name="firstName"
                     placeholder="Имя*"
@@ -997,6 +998,7 @@
 
                   <input
                     class="input"
+                    id="phone"
                     type="tel"
                     name="phone"
                     placeholder="Телефон*"
@@ -1007,6 +1009,7 @@
                 <div class="form-divider">
                   <input
                     class="input"
+                    id="lastName"
                     type="text"
                     name="lastName"
                     placeholder="Фамилия*"
@@ -1015,6 +1018,7 @@
 
                   <input
                     class="input"
+                    id="email"
                     type="email"
                     name="email"
                     placeholder="Email*"
@@ -1036,7 +1040,7 @@
                 aria-required="true"
               ></div>
               <div class="confidential-policies">
-                <input type="checkbox" name="policies" required />
+                <input type="checkbox" name="policies" id="policies" required />
                 <span class="label-policies"
                   >Я согласен с
                   <a
@@ -1057,7 +1061,9 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-submit">Заказать рецептуру</button>
+            <button type="submit" value="Submit" class="btn-submit">
+              Заказать рецептуру
+            </button>
           </form>
         </section>
       </div>
