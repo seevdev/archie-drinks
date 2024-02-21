@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('resize', () => {
       let width = window.innerWidth;
-      console.log(width);
+
       setParams(width);
     });
 
@@ -115,9 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
           '--cards-per-page',
           cardsPerPage
         );
-        console.log('cardsPerPage:' + cardsPerPage);
       }
-      // ________________________________________//
 
       if (width <= 1101 && width > 780) {
         cardsPerPage = 3;
@@ -200,7 +198,38 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.classList.add('hidden');
   }
   function btnSubmitModalHandler() {
-    orderBtnHandler();
+    e.preventDefault();
+
+    let firstName = document.querySelector('.form-modal input[name=firstName]');
+    let lastName = document.querySelector('.form-modal input[name=lastName]');
+    let email = document.querySelector('.form-modal input[name=email]');
+    let phone = document.querySelector('.form-modal input[name=phone]');
+    let comment = document.querySelector('.form-modal div[name=comment]');
+    let agreement = document.querySelector('.form-modal input[name=policies] ');
+
+    if (!agreement.checked) {
+      agreement.value = 'нет';
+    } else {
+      agreement.value = 'да';
+    }
+
+    const formData = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      phone: phone.value,
+      comment: comment.value,
+      agreement: agreement.value,
+    };
+
+    sendForm(formData);
+    firstName.value = '';
+    lastName.value = '';
+    email.value = '';
+    phone.value = '';
+    comment.innerHTML = '';
+    agreement.checked = false;
+    
     closeModal();
   }
 
@@ -208,39 +237,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
   orderBtn.addEventListener('click', orderBtnHandler);
 
-  // async function sendForm(url, formData = {}) {
-  //   try {
-
-  //     const response = await fetch(url, {
-  //       method: 'POST',
-  //       body: formData,
-  //       mode: 'no-cors',
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error('Fetch new data');
-  //     }
-
-  //     const responseData = await response.json();
-  //     console.log(responseData);
-  //     // return responseData;
-  //   } catch (error) {
-  //     console.error('Error:', error.message);
-
-  //     throw error;
-  //   }
-  // }
-
   function orderBtnHandler(e) {
     e.preventDefault();
-    
 
+    let firstName = document.querySelector(
+      '.contact-form input[name=firstName]'
+    );
+    let lastName = document.querySelector('.contact-form input[name=lastName]');
+    let email = document.querySelector('.contact-form input[name=email]');
+    let phone = document.querySelector('.contact-form input[name=phone]');
+    let comment = document.querySelector('.contact-form div[name=comment]');
+    let agreement = document.querySelector(
+      '.contact-form input[name=policies] '
+    );
 
+    if (!agreement.checked) {
+      agreement.value = 'нет';
+    } else {
+      agreement.value = 'да';
+    }
+
+    const formData = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      phone: phone.value,
+      comment: comment.value,
+      agreement: agreement.value,
+    };
+
+    sendForm(formData);
+
+    firstName.value = '';
+    lastName.value = '';
+    email.value = '';
+    phone.value = '';
+    comment.innerHTML = '';
+    agreement.checked = false;
     //Empty the fields
-    // firstName.value = '';
-    // lastName.value = '';
-    // email.value = '';
-    // phone.value = '';
+  }
+
+  async function sendForm(formData) {
+    try {
+      const request = await fetch('send_email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      alert('The form was sucesfully sent');
+    } catch (e) {
+      alert(e.message);
+    }
   }
 
   //  NAV MOBILE

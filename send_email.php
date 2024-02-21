@@ -9,24 +9,30 @@ require './PHPMailer/src/PHPMailer.php';
 require './PHPMailer/src/SMTP.php';
     
 
-echo('Hello Natalie');
+
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $comment = $_POST['comment'];
-    
+
+$formData = json_decode(file_get_contents('php://input'), true);
+
+    $firstName = $formData['firstName'];
+    $lastName = $formData['lastName'];
+    $email = $formData['email'];
+    $phone =$formData['phone'];
+    $comment = $formData['comment'];
+    $agreement = $formData['agreement'];    
 
   
-    $message .= "First Name: $firstName\n";
-    $message .= "Last Name: $lastName\n";
-    $message .= "Email: $email\n";
-    $message .= "Phone: $phone\n";
-    $message .= "Comment: $comment\n";
+    $message .= "Имя: $firstName\n";
+    $message .= "Фамилия: $lastName\n";
+    $message .= "Почта: $email\n";
+    $message .= "Телефон: $phone\n";
+    $message .= "Комментарий к заказу: $comment\n";
+    $message .= "Принял/а соглашение: $agreement\n";
+
 
     $mail = new PHPMailer(true);
+    $mail->CharSet = 'UTF-8';
 
     $mail->SMTPOptions = array(
         'ssl' => array(
@@ -54,6 +60,7 @@ try{
     $mail->isHTML(false); // Set email format to plain text
     $mail->Subject = 'New form submission from:'.$firstName.' '.$lastName;
     $mail->Body    = $message;
+    
     
    $mail->send();
 
