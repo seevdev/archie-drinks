@@ -7,31 +7,10 @@ use PHPMailer\PHPMailer\Exception;
 require './PHPMailer/src/Exception.php';
 require './PHPMailer/src/PHPMailer.php';
 require './PHPMailer/src/SMTP.php';
-    
 
 
 
-if($_SERVER['REQUEST_METHOD']=="POST"){
-
-$formData = json_decode(file_get_contents('php://input'), true);
-
-    $firstName = $formData['firstName'];
-    $lastName = $formData['lastName'];
-    $email = $formData['email'];
-    $phone =$formData['phone'];
-    $comment = $formData['comment'];
-    $agreement = $formData['agreement'];    
-
-  
-    $message .= "Имя: $firstName\n";
-    $message .= "Фамилия: $lastName\n";
-    $message .= "Почта: $email\n";
-    $message .= "Телефон: $phone\n";
-    $message .= "Комментарий к заказу: $comment\n";
-    $message .= "Принял/а соглашение: $agreement\n";
-
-
-    $mail = new PHPMailer(true);
+$mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
 
     $mail->SMTPOptions = array(
@@ -41,9 +20,52 @@ $formData = json_decode(file_get_contents('php://input'), true);
             'allow_self_signed' => true
         )
     );
-  
 
-try{
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+$errors = array();
+$response = array();
+$message="";
+
+
+
+
+$formData = json_decode(file_get_contents('php://input'), true);
+
+   $firstName = isset($formData['firstName']) ? $formData['firstName'] : '' ;
+   $lastName = isset($formData['lastName']) ? $formData['lastName'] : '';
+    $email = isset($formData['email']) ? $formData['email'] : '' ;
+    $phone =isset($formData['phone']) ? $formData['phone'] : '';
+    $comment = isset($formData['comment']) ? $formData['comment'] : '';
+    $agreement = isset($formData['agreement']) ? $formData['agreement'] : '';    
+
+  if(empty($firstName) || empty($lastName) || empty($email) || empty($phone) || $agreement = false){
+    $errors['message'] = "Необходимо заполнить все поля ввода";
+  }
+
+//   } else {  
+
+//     if(!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)){
+//            $errors['message'] = 'Email invalid';
+//        }
+//    }     
+//        if (!empty($phone) && !preg_match("/^[0-9]{10}$/", $phone)) {
+//            $errors['message'] = "Phone invalid";
+//        } 
+// }
+ 
+
+if(empty($errors)){
+
+    $response = array("success" => true);
+
+    $message .= "Имя: $firstName \n";
+    $message .= "Фамилия: $lastName \n";
+    $message .= "Почта: $email \n";
+    $message .= "Телефон: $phone \n";
+    $message .= "Комментарий к заказу: $comment \n";
+    $message .= "Принял/а соглашение: $agreement \n";                       
+    
+
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; 
     $mail->SMTPAuth = true;
@@ -57,18 +79,20 @@ try{
     $mail->addAddress('seev.dev@gmail.com', 'Archie');
     
   
-    $mail->isHTML(false); // Set email format to plain text
+    $mail->isHTML(false); 
     $mail->Subject = 'New form submission from:'.$firstName.' '.$lastName;
     $mail->Body    = $message;
-    
-    
-   $mail->send();
-
-}catch(Exception $e){echo "Error: Unable to send form data. Please try again later. Error: {$mail->ErrorInfo}<br>";}
+        
+    $mail->send();
 
     
+}else{
+    $response = array("success" => false, "message" => $errors['message']);
 }
 
-
+header('Content-Type: application/json');
+echo json_encode($response);
+}
+         
 ?>
 

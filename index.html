@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="assets/fonts/GT Walsheim Pro Thin" />
-    <link rel="stylesheet" href="assets/fonts/GT Walsheim Pro" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/queries.css" />
 
     <script type="module" defer src="script.js"></script>
-    <script type="module" defer src="accordion.js"></script>
     <title>Archie Drinks</title>
   </head>
   <body>
@@ -46,6 +43,7 @@
                 placeholder="Имя*"
                 required
               />
+              <span><?php echo $emailErr;?></span>
 
               <input
                 class="modal-input"
@@ -105,7 +103,6 @@
             </span>
           </div>
         </div>
-
         <button class="btn-submit_modal">Заказать рецептуру</button>
       </form>
     </div>
@@ -1058,6 +1055,7 @@
                   </a>
                 </span>
               </div>
+              <span class="error" id="main-form_error"></span>
             </div>
 
             <button type="submit" class="btn-submit">Заказать рецептуру</button>

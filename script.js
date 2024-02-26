@@ -197,7 +197,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function closeModal() {
     modal.classList.add('hidden');
   }
-  function btnSubmitModalHandler() {
+
+  function btnSubmitModalHandler(e) {
     e.preventDefault();
 
     let firstName = document.querySelector('.form-modal input[name=firstName]');
@@ -223,13 +224,14 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     sendForm(formData);
+
     firstName.value = '';
     lastName.value = '';
     email.value = '';
     phone.value = '';
     comment.innerHTML = '';
     agreement.checked = false;
-    
+
     closeModal();
   }
 
@@ -279,17 +281,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   async function sendForm(formData) {
     try {
-      const request = await fetch('send_email.php', {
+      const response = await fetch('send_email.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
-      alert('The form was sucesfully sent');
+      const data = await response.json();
+      console.log(data);
+      if (!data.success) {
+        document.querySelector(
+          '#main-form_error'
+        ).innerHTML = `*${data.message}`;
+      }
     } catch (e) {
-      alert(e.message);
+      console.log(e);
+      console.log(e.message);
     }
   }
 
