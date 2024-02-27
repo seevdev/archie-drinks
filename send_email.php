@@ -38,9 +38,11 @@ $formData = json_decode(file_get_contents('php://input'), true);
     $comment = isset($formData['comment']) ? $formData['comment'] : '';
     $agreement = isset($formData['agreement']) ? $formData['agreement'] : '';    
 
-  if(empty($firstName) || empty($lastName) || empty($email) || empty($phone) || $agreement = false){
+  if(empty($firstName) || empty($lastName) || empty($email) || empty($phone) || $agreement == 'нет'){
     $errors['message'] = "Необходимо заполнить все поля ввода";
   }
+
+  
 
 
 if(empty($errors)){

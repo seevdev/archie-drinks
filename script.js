@@ -189,6 +189,15 @@ document.addEventListener('DOMContentLoaded', function () {
   sideBtn.addEventListener('click', openModal);
   modalOverlay.addEventListener('click', closeModal);
   btnClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (
+      e.target.classList.contains('input') ||
+      e.target.classList.contains('modal-form-comment') ||
+      e.target.classList.contains('checkbox')
+    ) {
+      document.querySelector('#modal-form_err').innerHTML = '';
+    }
+  });
 
   function openModal() {
     modal.classList.remove('hidden');
@@ -206,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let email = document.querySelector('.form-modal input[name=email]');
     let phone = document.querySelector('.form-modal input[name=phone]');
     let comment = document.querySelector('.form-modal div[name=comment]');
-    let agreement = document.querySelector('.form-modal input[name=policies] ');
+    let agreement = document.querySelector('.form-modal input[name=policies]');
 
     if (!agreement.checked) {
       agreement.value = 'нет';
@@ -223,14 +232,16 @@ document.addEventListener('DOMContentLoaded', function () {
       agreement: agreement.value,
     };
 
-    sendForm(formData, true);
-
-    firstName.value = '';
-    lastName.value = '';
-    email.value = '';
-    phone.value = '';
-    comment.innerHTML = '';
-    agreement.checked = false;
+    sendForm(formData, true).then((success) => {
+      if (success) {
+        firstName.value = '';
+        lastName.value = '';
+        email.value = '';
+        phone.value = '';
+        comment.innerHTML = '';
+        agreement.checked = false;
+      }
+    });
   }
 
   // MAIN FORM
@@ -239,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
   mainForm.addEventListener('click', function (e) {
     if (
       e.target.classList.contains('input') ||
-      e.target.classList.contains('contact-form--comment') ||
+      e.target.classList.contains('contact-form-comment') ||
       e.target.classList.contains('checkbox')
     ) {
       document.querySelector('#main-form_err').innerHTML = '';
@@ -275,15 +286,41 @@ document.addEventListener('DOMContentLoaded', function () {
       agreement: agreement.value,
     };
 
-    sendForm(formData);
-
-    firstName.value = '';
-    lastName.value = '';
-    email.value = '';
-    phone.value = '';
-    comment.innerHTML = '';
-    agreement.checked = false;
     //Empty the fields
+    // 'linear-gradient(92deg,#00f1d4 -3.46%, #73f9f1 27.54%,#e9deff 78.15%,#ccc6f2 98.01%)',
+
+    sendForm(formData).then((success) => {
+      if (success === true) {
+        Toastify({
+          text: 'Ваша форма успешно отправлена!',
+          duration: 3000,
+          destination: 'https://github.com/apvarun/toastify-js',
+          newWindow: true,
+          close: false,
+          gravity: 'top', // `top` or `bottom`
+          position: 'center', // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: '#00F1D4',
+            width: '350px',
+            height: '75px',
+            borderRadius: '8px',
+            color: '#060606',
+            fontSize: '1.4rem',
+            display: 'flex',
+            alignItems: 'center',
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+
+        firstName.value = '';
+        lastName.value = '';
+        email.value = '';
+        phone.value = '';
+        comment.innerHTML = '';
+        agreement.checked = false;
+      }
+    });
   }
 
   async function sendForm(formData, isModal = false) {
@@ -309,7 +346,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (data.success && isModal) {
         closeModal();
+        return true;
       }
+      if (data.success) {
+        return true;
+      }
+      return false;
     } catch (e) {
       console.log(e);
     }
