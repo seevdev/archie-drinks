@@ -27,7 +27,6 @@
 }
 
 .section-hero--logo-text {
-  /* width: 18.5vw; */
   width: 55%;
   height: auto;
   margin-bottom: 4.7rem;
@@ -54,7 +53,6 @@
 }
 
 .section-hero--cans-container {
-  /* position: absolute; */
   position: relative;
 
   z-index: 9999;
@@ -401,7 +399,6 @@
 .handle {
   display: flex;
   align-items: center;
-  /* background-color: rgba(0, 0, 0, 0.01); */
   z-index: 10;
   height: 100%;
   position: absolute;
@@ -636,7 +633,6 @@
   border: none;
   padding: 0;
   margin: 0;
-  /* background-color: #fafafe; */
   filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.2));
   border-radius: 50%;
   cursor: pointer;
@@ -662,7 +658,6 @@
   font-family: GT Walsheim Pro;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
-  /* -webkit-transition: -webkit-transform 0.3s; */
   z-index: 999999;
   overflow-y: hidden;
 }
@@ -722,6 +717,7 @@
 }
 
 /* MODAL */
+
 .modal {
   position: fixed;
   display: flex;
@@ -803,15 +799,6 @@
   gap: 0.6rem;
 }
 
-/* .btn-policies:link,
-.btn-policies:visited,
-.btn-agreement:link,
-.btn-agreement:visited {
-  text-decoration-style: solid;
-  text-decoration-line: underline;
-} */
-/* ------------- */
-
 .btn-close {
   position: absolute;
   right: 20px;
@@ -824,6 +811,7 @@
 }
 
 /* SIDE BTN */
+
 .side-form_btn {
   position: fixed;
   background: none;
@@ -897,7 +885,10 @@
   position: absolute;
   margin-top: 1.2rem;
   color: #f03e3e;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+.hara {
+  position: absolute;
 }
 
 .flex {
@@ -908,6 +899,8 @@
 #section--5 {
   scroll-margin-top: 3.2rem;
 }
+
+/* SIDE BTN ANIMATION */
 
 @keyframes shadow {
   0% {

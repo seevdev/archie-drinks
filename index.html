@@ -43,13 +43,11 @@
                 placeholder="Имя*"
                 required
               />
-              <span><?php echo $emailErr;?></span>
-
               <input
                 class="modal-input"
-                type="tel"
-                name="phone"
-                placeholder="Телефон*"
+                type="text"
+                name="lastName"
+                placeholder="Фамилия*"
                 required
               />
             </div>
@@ -57,9 +55,9 @@
             <div class="modal-form-divider">
               <input
                 class="modal-input"
-                type="text"
-                name="lastName"
-                placeholder="Фамилия*"
+                type="tel"
+                name="phone"
+                placeholder="Телефон*"
                 required
               />
 
@@ -102,6 +100,7 @@
               </a>
             </span>
           </div>
+          <span class="error" id="modal-form_err"></span>
         </div>
         <button class="btn-submit_modal">Заказать рецептуру</button>
       </form>
@@ -991,13 +990,12 @@
                     placeholder="Имя*"
                     required
                   />
-
                   <input
                     class="input"
-                    id="phone"
-                    type="tel"
-                    name="phone"
-                    placeholder="Телефон*"
+                    id="lastName"
+                    type="text"
+                    name="lastName"
+                    placeholder="Фамилия*"
                     required
                   />
                 </div>
@@ -1005,10 +1003,10 @@
                 <div class="form-divider">
                   <input
                     class="input"
-                    id="lastName"
-                    type="text"
-                    name="lastName"
-                    placeholder="Фамилия*"
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="Телефон*"
                     required
                   />
 
@@ -1036,7 +1034,12 @@
                 aria-required="true"
               ></div>
               <div class="confidential-policies">
-                <input type="checkbox" name="policies" required />
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="policies"
+                  required
+                />
                 <span class="label-policies"
                   >Я согласен с
                   <a
@@ -1055,7 +1058,7 @@
                   </a>
                 </span>
               </div>
-              <span class="error" id="main-form_error"></span>
+              <span class="error" id="main-form_err"></span>
             </div>
 
             <button type="submit" class="btn-submit">Заказать рецептуру</button>

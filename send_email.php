@@ -42,17 +42,6 @@ $formData = json_decode(file_get_contents('php://input'), true);
     $errors['message'] = "Необходимо заполнить все поля ввода";
   }
 
-//   } else {  
-
-//     if(!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)){
-//            $errors['message'] = 'Email invalid';
-//        }
-//    }     
-//        if (!empty($phone) && !preg_match("/^[0-9]{10}$/", $phone)) {
-//            $errors['message'] = "Phone invalid";
-//        } 
-// }
- 
 
 if(empty($errors)){
 

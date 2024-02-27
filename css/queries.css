@@ -361,7 +361,9 @@
   .footer-image--container,
   .footer-spot--purple,
   .footer-spot--green,
-  .side-form_btn--image-container {
+  .side-form_btn--image-container,
+  .side-form_btn,
+  .side-btn_animation {
     display: none;
   }
 

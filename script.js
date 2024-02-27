@@ -1,3 +1,5 @@
+'use strict';
+
 document.documentElement.style.setProperty(
   '--cards-per-page',
   Math.floor(window.innerWidth / 257)
@@ -14,13 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnNavMobile = document.querySelector('.nav-mobile--btn');
   const navMobileList = document.querySelector('.nav-mobile--list');
   const navMobileLinks = document.querySelectorAll('.navlink-mobile');
-  const card = document.querySelector('.carousel-card');
-  const cardsAll = document.querySelectorAll('.carousel-card');
   const headerOrderBtn = document.querySelector('.section-hero--order-btn');
   const orderBtn = document.querySelector('.btn-submit');
   const sideBtn = document.querySelector('.side-form_btn');
-  const orderBtnMobile = document.querySelector('.btn-submit--mobile');
-  const form = document.querySelector('.section-contact');
+  const mainForm = document.querySelector('.contact-form');
   const modal = document.querySelector('.modal');
   const modalOverlay = document.querySelector('.modal-overlay');
   const btnSubmitModal = document.querySelector('.btn-submit_modal');
@@ -186,14 +185,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // MODAL FORM
 
+  btnSubmitModal.addEventListener('click', btnSubmitModalHandler);
   sideBtn.addEventListener('click', openModal);
   modalOverlay.addEventListener('click', closeModal);
   btnClose.addEventListener('click', closeModal);
-  btnSubmitModal.addEventListener('click', btnSubmitModalHandler);
 
   function openModal() {
     modal.classList.remove('hidden');
   }
+
   function closeModal() {
     modal.classList.add('hidden');
   }
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
       agreement: agreement.value,
     };
 
-    sendForm(formData);
+    sendForm(formData, true);
 
     firstName.value = '';
     lastName.value = '';
@@ -231,13 +231,20 @@ document.addEventListener('DOMContentLoaded', function () {
     phone.value = '';
     comment.innerHTML = '';
     agreement.checked = false;
-
-    closeModal();
   }
 
-  // CONTACT FORM VALIDATION
+  // MAIN FORM
 
   orderBtn.addEventListener('click', orderBtnHandler);
+  mainForm.addEventListener('click', function (e) {
+    if (
+      e.target.classList.contains('input') ||
+      e.target.classList.contains('contact-form--comment') ||
+      e.target.classList.contains('checkbox')
+    ) {
+      document.querySelector('#main-form_err').innerHTML = '';
+    }
+  });
 
   function orderBtnHandler(e) {
     e.preventDefault();
@@ -279,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Empty the fields
   }
 
-  async function sendForm(formData) {
+  async function sendForm(formData, isModal = false) {
     try {
       const response = await fetch('send_email.php', {
         method: 'POST',
@@ -291,13 +298,20 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = await response.json();
       console.log(data);
       if (!data.success) {
-        document.querySelector(
-          '#main-form_error'
-        ).innerHTML = `*${data.message}`;
+        isModal
+          ? (document.querySelector(
+              '#modal-form_err'
+            ).innerHTML = `*${data.message}`)
+          : (document.querySelector(
+              '#main-form_err'
+            ).innerHTML = `*${data.message}`);
+      }
+
+      if (data.success && isModal) {
+        closeModal();
       }
     } catch (e) {
       console.log(e);
-      console.log(e.message);
     }
   }
 
