@@ -234,6 +234,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sendForm(formData, true).then((success) => {
       if (success) {
+        Toastify({
+          text: 'Ваша форма успешно отправлена!',
+          duration: 3000,
+          destination: 'https://github.com/apvarun/toastify-js',
+          newWindow: true,
+          close: false,
+          gravity: 'top', // `top` or `bottom`
+          position: 'center', // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: '#00F1D4',
+            width: '350px',
+            height: '75px',
+            borderRadius: '8px',
+            color: '#060606',
+            fontSize: '1.4rem',
+            display: 'flex',
+            alignItems: 'center',
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+
         firstName.value = '';
         lastName.value = '';
         email.value = '';
@@ -285,9 +307,6 @@ document.addEventListener('DOMContentLoaded', function () {
       comment: comment.value,
       agreement: agreement.value,
     };
-
-    //Empty the fields
-    // 'linear-gradient(92deg,#00f1d4 -3.46%, #73f9f1 27.54%,#e9deff 78.15%,#ccc6f2 98.01%)',
 
     sendForm(formData).then((success) => {
       if (success === true) {
