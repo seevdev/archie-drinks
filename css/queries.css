@@ -3,10 +3,6 @@
     width: 25vw;
   }
 
-  .section-hero--logo-text {
-    /* width: 25vw;
-    width: 20vw; */
-  }
   .nav-links {
     margin-bottom: 5.6rem;
   }
@@ -118,9 +114,6 @@
     height: 48px;
   }
 
-  .footer-logo {
-    width: 55%;
-  }
   .footer-image {
     width: 90%;
   }
@@ -133,7 +126,7 @@
   }
 
   .footer-logo {
-    width: 30%;
+    width: 25%;
   }
   .form-modal {
     padding: 7.2rem;
@@ -175,7 +168,6 @@
   }
 
   .section-about--portrait {
-    /* height: 25vh; */
     width: 30vw;
     height: auto;
   }
@@ -206,21 +198,14 @@
   .production-stages--number {
     font-size: 4.8rem;
   }
-
-  .description {
-    font-size: 1.2rem;
-  }
-
+  /* FOOTER */
   .section-footer {
     height: 15vh;
   }
 
-  .footer-logo {
-    width: 50%;
-  }
-
   .footer-info {
-    gap: 1.8rem;
+    gap: 1.2rem;
+    font-size: 0.6rem;
   }
 
   .footer-image {
@@ -228,7 +213,7 @@
   }
 
   .footer-description {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 
   .preserved {
@@ -347,14 +332,28 @@
   /* FOOTER */
   .section-footer {
     justify-content: start;
+    padding: 0;
+    padding-top: 1.2rem;
   }
   .footer-info {
     left: 0;
     padding-left: 2.4rem;
     padding-right: 2.4rem;
+    gap: 0.2rem;
+  }
+
+  .link-email_icon,
+  .whatsapp-icon,
+  .telegram-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .preserved {
+    font-size: 0.6rem;
   }
   .footer-logo {
-    width: 95px;
+    width: 35px;
   }
 
   .footer-image,
@@ -366,6 +365,8 @@
   .side-btn_animation {
     display: none;
   }
+
+  /* MODAL */
 
   .form-modal {
     width: 90%;
@@ -407,7 +408,7 @@
   }
 }
 
-@media (width<=526px) {
+@media (width<=555px) {
   .nav {
     display: none;
   }
@@ -569,5 +570,12 @@
 
   .nav-mobile--logo {
     width: 125px;
+  }
+
+  /* FOOTER */
+
+  .footer-description,
+  .preserved {
+    font-size: 0.4rem;
   }
 }
